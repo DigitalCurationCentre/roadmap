@@ -1,5 +1,6 @@
 class Organisation < ActiveRecord::Base
   include GlobalHelpers
+    extend Dragonfly::Model::Validations
     #associations between tables
     belongs_to :organisation_type
     has_many :guidance_groups
@@ -20,10 +21,17 @@ class Organisation < ActiveRecord::Base
 	accepts_nested_attributes_for :dmptemplates
   accepts_nested_attributes_for :token_permission_types
 
-	attr_accessible :abbreviation, :banner_text, :description, :domain,
+	attr_accessible :abbreviation, :banner_text, :logo, :remove_logo, :description, :domain,
                   :logo_file_name, :name, :stylesheet_file_id, :target_url,
                   :organisation_type_id, :wayfless_entity, :parent_id, :sort_name,
                   :token_permission_type_ids
+
+  ##
+  # allow validations for logo upload
+  dragonfly_accessor :logo
+  validates_property :height, of: :logo, in: (0..100)
+  validates_property :format, of: :logo, in: ['jpeg', 'png', 'gif','jpg','bmp']
+  validates_size_of :logo, maximum: 500.kilobytes
 
 
   ##

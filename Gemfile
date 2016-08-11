@@ -92,6 +92,11 @@ gem 'feedjira'
 gem 'caracal'
 gem 'caracal-rails'
 
+#    LOGO UPLOAD
+#
+gem 'dragonfly'
+#
+
 #
 #     INTERNATIONALIZATION
 #
