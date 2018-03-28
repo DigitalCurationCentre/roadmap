@@ -16,6 +16,8 @@ class TemplatesController < ApplicationController
     # Get all of the unique template family ids (dmptemplate_id) for each funder and the current org
     funder_ids = Org.funders.includes(:templates).collect{|f| f.templates.where(published: true).valid.collect{|ft| ft.dmptemplate_id } }.flatten.uniq
     org_ids = current_user.org.templates.where(customization_of: nil).valid.collect{|t| t.dmptemplate_id }.flatten.uniq
+    # We add the default template to the list of funder dmptemplate_ids
+    funder_ids << Template.default.dmptemplate_id
 
     org_ids.each do |id|
       current = Template.current(id)
@@ -48,6 +50,7 @@ class TemplatesController < ApplicationController
     authorize @template
 
     customisation = Template.deep_copy(@template)
+    customisation.is_default = false
     customisation.org = current_user.org
     customisation.version = 0
     customisation.customization_of = @template.dmptemplate_id
@@ -81,6 +84,7 @@ class TemplatesController < ApplicationController
     @template = Template.includes(:org).find(params[:id])
     authorize @template
     new_customization = Template.deep_copy(@template)
+    customisation.is_default = false
     new_customization.org_id = current_user.org_id
     new_customization.published = false
     new_customization.customization_of = @template.dmptemplate_id
