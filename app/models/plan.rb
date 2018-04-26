@@ -371,14 +371,9 @@ class Plan < ActiveRecord::Base
   # @param user_id [Integer] the id for a user
   # @return [Boolean] true if the user can read the plan
   def readable_by?(user_id)
-    user = user_id.is_a?(User) ? user_id : User.find(user_id)
-    owner_orgs = self.owner_and_coowners.collect(&:org)
-    
-    # Super Admins can view plans read-only, Org Admins can view their Org's plans 
-    # otherwise the user must have the commenter role
-    (user.can_super_admin? ||
-     user.can_org_admin? && owner_orgs.include?(user.org) ||
-     has_role(user.id, :commenter))
+    user = user_id.is_a?(User) ? user_id : User.find(user_id)    
+    # Monkey patching the sense of readable_by?
+    return user.can_super_admin? || has_role(user.id, :commenter)
   end
 
   ##
