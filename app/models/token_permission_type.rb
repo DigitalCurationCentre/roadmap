@@ -48,9 +48,10 @@ class TokenPermissionType < ActiveRecord::Base
                          uniqueness: { message: UNIQUENESS_MESSAGE }
 
 
-  # The token_type of the token_permission_type
+  ##
+  # returns the token_type of the token_permission_type
   #
-  # Returns String
+  # @return [String] token_type of the token_permission_type
   def to_s
     self.token_type
   end

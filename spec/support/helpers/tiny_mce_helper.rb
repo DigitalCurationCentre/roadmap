@@ -13,15 +13,10 @@ module TinyMceHelper
   def tinymce_fill_in(id, val)
     # wait until the TinyMCE editor instance is ready.
     # This is required for cases where the editor is loaded via XHR.
-    x = 0
-    until x == 50 || page.evaluate_script("tinyMCE.get('#{id}') !== null")
-      x += 1
-      sleep 0.2
-    end
+    sleep 0.2 until page.evaluate_script("tinyMCE.get('#{id}') !== null")
+
     page.execute_script <<~JS
-      var editor = tinyMCE.get('#{id}');
-      editor.setContent('#{val}');
-      editor.fire('change');
+      tinyMCE.get('#{id}').setContent('#{val}')
     JS
   end
 

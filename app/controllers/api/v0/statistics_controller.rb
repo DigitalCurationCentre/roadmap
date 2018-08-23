@@ -4,12 +4,11 @@ module Api
       before_action :authenticate
 
       # GET /api/v0/statistics/users_joined?start_date=&end_date=&org_id=
-      #
       # Returns the number of users joined for the user's org.
       # If start_date is passed, only counts those with created_at is >= than start_date
       # If end_date is passed, only counts those with created_at is <= than end_date are
-      # If org_id is passed and user has super_admin privileges that counter is performed
-      # against org_id param instead of user's org
+      # If org_id is passed and user has super_admin privileges that counter is performed against org_id param instead of user's org
+      # @return
       def users_joined
         raise Pundit::NotAuthorizedError unless Api::V0::StatisticsPolicy.new(@user, :statistics).users_joined?
 
@@ -125,9 +124,9 @@ module Api
       end
 
       ##
-      # Displays the number of DMPs using the specified template between the optional
-      # specified dates ensures that the template is owned/created by the caller's
-      # organisation
+      # GET
+      # @return the number of DMPs using the specified template between the optional specified dates
+      # ensures that the template is owned/created by the caller's organisation
       def using_template
         org_templates = @user.org.templates.where(customization_of: nil)
         raise Pundit::NotAuthorizedError unless Api::V0::StatisticsPolicy.new(@user, org_templates.first).using_template?
@@ -153,9 +152,9 @@ module Api
 
       ##
       # GET
-      # Renders a list of templates with their titles, ids, and uses between the optional
-      # specified dates the uses are restricted to DMPs created by users of the same
-      # organisation as the user who ititiated the call.
+      # @return a list of templates with their titles, ids, and uses between the optional specified dates
+      # the uses are restricted to DMPs created by users of the same organisation
+      # as the user who ititiated the call
       def plans_by_template
         raise Pundit::NotAuthorizedError unless Api::V0::StatisticsPolicy.new(@user, :statistics).plans_by_template?
         org_projects = []
@@ -182,11 +181,11 @@ module Api
         respond_with @templates
       end
 
+      ##
       # GET
-      #
-      # Renders a list of DMPs metadata, provided the DMPs were created between the
-      # optional specified dates DMPs must be owned by a user who's organisation is the
-      # same as the user who generates the call.
+      # @return a list of DMPs metadata, provided the DMPs were created between the optional specified dates
+      # DMPs must be owned by a user who's organisation is the same as the user
+      # who generates the call
       def plans
         raise Pundit::NotAuthorizedError unless Api::V0::StatisticsPolicy.new(@user, :statistics).plans?
         @org_plans = []
@@ -203,34 +202,32 @@ module Api
 
 
       private
+        ##
+        # takes in an array of active_reccords and restricts the range of dates
+        # to those specified in the params
+        #
+        # @param objects [Array<ActiveReccord>] any active_reccord reccords which
+        #   have the "created_at" field specified
+        # @return [Array<ActiveReccord>] filtered list of objects
+        def restrict_date_range( objects )
+          # set start_date to either passed param, or beginning of time
+          start_date = params[:start_date].blank? ? Date.new(0) : Date.strptime(params[:start_date], "%Y-%m-%d")
+          # set end_date to either passed param or now
+          end_date = params[:end_date].blank? ? Date.today : Date.strptime(params[:end_date], "%Y-%m-%d")
 
-      ##
-      # Takes in an array of active_reccords and restricts the range of dates
-      # to those specified in the params
-      #
-      # objects - any active_reccord reccords which have the "created_at" field specified
-      #
-      # Returns Array
-      def restrict_date_range( objects )
-        # set start_date to either passed param, or beginning of time
-        start_date = params[:start_date].blank? ? Date.new(0) : Date.strptime(params[:start_date], "%Y-%m-%d")
-        # set end_date to either passed param or now
-        end_date = params[:end_date].blank? ? Date.today : Date.strptime(params[:end_date], "%Y-%m-%d")
-
-        filtered = []
-        objects.each do |obj|
-          # apperantly things can have nil created_at
-          if obj.created_at.blank?
-            if params[:start_date].blank? && params[:end_date].blank?
+          filtered = []
+          objects.each do |obj|
+            # apperantly things can have nil created_at
+            if obj.created_at.blank?
+              if params[:start_date].blank? && params[:end_date].blank?
+                filtered += [obj]
+              end
+            elsif start_date <= obj.created_at.to_date && end_date >= obj.created_at.to_date
               filtered += [obj]
             end
-          elsif start_date <= obj.created_at.to_date && end_date >= obj.created_at.to_date
-            filtered += [obj]
           end
+          return filtered
         end
-        return filtered
-      end
-
     end
   end
 end

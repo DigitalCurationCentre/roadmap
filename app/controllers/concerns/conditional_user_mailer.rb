@@ -5,11 +5,13 @@ module ConditionalUserMailer
   # Executes a given block passed if the recipient user has the preference
   # email key enabled
   #
-  # recipients - User or Enumerable object or any object that includes Enumerable class
-  # key        - A key (dot notation) whose value is true/false and belongs to
-  #              prefences.email (see config/branding.yml)
+  # @param recipients {User | Enumerable } User object or any object that
+  # includes Enumerable class
   #
-  # Returns Boolean
+  # @param key {String} - A key (dot notation) whose value is true/false and
+  # belongs to prefences.email (see config/branding.yml)
+  #
+  # Returns true or false
   def deliver_if(recipients: [], key:, &block)
     return false unless block_given?
 

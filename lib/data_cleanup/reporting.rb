@@ -24,12 +24,9 @@ module DataCleanup
     end
 
     def report
-      issues_found.each do |issue|
-        DataCleanup.display issue
-        DataCleanup.logger.info issue
-      end
+      issues_found.each { |issue| DataCleanup.logger.info issue }
       color = invalid_record_count.zero? ? :green : :red
-      DataCleanup.display(<<~TEXT, color: color)
+      DataCleanup.logger.info(<<~TEXT, color: color)
         Invalid records: #{invalid_record_count} / #{total_record_count}
       TEXT
     end

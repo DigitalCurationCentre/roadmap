@@ -8,9 +8,8 @@ module DataCleanup
         end
 
         def call
-          ids = ::Template.where(locale: nil).ids
-          log("Setting locale to #{FastGettext.default_locale} for Templates #{ids}")
-          ::Template.where(id: ids).update_all(locale: FastGettext.default_locale)
+          ::Template.where(locale: nil)
+                    .update_all(locale: FastGettext.default_locale)
         end
       end
     end

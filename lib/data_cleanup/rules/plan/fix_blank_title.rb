@@ -9,8 +9,7 @@ module DataCleanup
 
         def call
           ::Plan.where(title: [nil, '']).each do |plan|
-            log("Updating title on Plan#{plan.id}")
-            plan.update!(title: "My plan (#{plan.template.title})")
+            plan.update(title: "My plan (#{plan.template.title})")
           end
         end
       end

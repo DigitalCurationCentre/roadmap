@@ -19,12 +19,12 @@ module DataCleanup
       when 'EXCLUDE'
         return if model.model_name.in?(models.split(","))
       end
-      DataCleanup.display "Checking #{model.model_name.plural}:"
+      DataCleanup.logger.info "Checking #{model.model_name.plural}:"
       model.find_in_batches do |batch|
         instance_check = InstanceCheck.new
         batch.each { |instance| instance_check.(instance) }
       end
-      DataCleanup.display ""
+      DataCleanup.logger.info ""
     end
   end
 end

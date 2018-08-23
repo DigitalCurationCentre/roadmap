@@ -12,6 +12,7 @@
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
 #  guidance_group_id :integer
+#  question_id       :integer
 #
 # Indexes
 #
@@ -71,16 +72,17 @@ class Guidance < ActiveRecord::Base
   # = Class methods =
   # =================
 
+  ##
   # Returns whether or not a given user can view a given guidance
   # we define guidances viewable to a user by those owned by a guidance group:
   #   owned by the managing curation center
   #   owned by a funder organisation
   #   owned by an organisation, of which the user is a member
   #
-  # id   - The Integer id for a guidance
-  # user - A User object
-  #
-  # Returns Boolean
+  # @param id [Integer] the integer id for a guidance
+  # @param user [User] a user object
+  # @return [Boolean] true if the specified user can view the specified
+  # guidance, false otherwise
   def self.can_view?(user, id)
     guidance = Guidance.find_by(id: id)
     viewable = false
@@ -107,15 +109,15 @@ class Guidance < ActiveRecord::Base
     return viewable
   end
 
+  ##
   # Returns a list of all guidances which a specified user can view
   # we define guidances viewable to a user by those owned by a guidance group:
   #   owned by the Managing Curation Center
   #   owned by a funder organisation
   #   owned by an organisation, of which the user is a member
   #
-  # user - A User object
-  #
-  # Returns Array
+  # @param user [User] a user object
+  # @return [Array<Guidance>] a list of all "viewable" guidances to a user
   def self.all_viewable(user)
     managing_groups = Org.includes(guidance_groups: :guidances)
                          .managing_orgs.collect{|o| o.guidance_groups}
@@ -136,12 +138,13 @@ class Guidance < ActiveRecord::Base
     return all_viewable_guidances.flatten
   end
 
+  ##
   # Determine if a guidance is in a group which belongs to a specified
   # organisation
   #
-  # org_id - The Integer id for an organisation
-  #
-  # Returns Boolean
+  # @param org_id [Integer] the integer id for an organisation
+  # @return [Boolean] true if this guidance is in a group belonging to the
+  # specified organisation, false otherwise
   def in_group_belonging_to?(org_id)
     unless guidance_group.nil?
       if guidance_group.org.id == org_id

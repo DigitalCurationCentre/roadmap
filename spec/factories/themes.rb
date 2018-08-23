@@ -3,11 +3,11 @@
 # Table name: themes
 #
 #  id          :integer          not null, primary key
-#  description :text
-#  locale      :string
 #  title       :string
+#  description :text
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  locale      :string
 #
 
 FactoryBot.define do

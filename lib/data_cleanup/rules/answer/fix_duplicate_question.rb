@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 module DataCleanup
   module Rules
     # Fix duplicate question on Answer
@@ -16,10 +15,9 @@ module DataCleanup
                             .count.select { |k,v| v > 1 }
           # Values looks like [{ [123, 199] => 2}, ...]
           dataset.each do |values, count|
-            log("Destroying all Answers that are duplicates of earlier answers on the same question.")
             # ... and destroy all duplicates, keeping the latest record
             ::Answer.where(question: values.first, plan_id: values.last)
-                    .order("updated_at DESC")
+                    .order("created_at DESC")
                     .offset(1)
                     .destroy_all
           end

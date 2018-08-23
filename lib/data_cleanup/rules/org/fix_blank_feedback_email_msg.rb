@@ -13,12 +13,10 @@ module DataCleanup
         HTML
 
         def description
-          "Fix orgs feedback_email_message is blank"
+          "Fix orgs where feedback_enabled is true"
         end
 
         def call
-          ids = ::Org.where(feedback_enabled: true, feedback_email_msg: "").pluck(:id)
-          log("Adding default feedback_enabled for orgs: #{ids}")
           ::Org.where(feedback_enabled: true, feedback_email_msg: "")
              .update_all(feedback_email_msg: DEFAULT_MSG)
         end

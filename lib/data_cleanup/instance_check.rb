@@ -6,23 +6,17 @@ module DataCleanup
     # frozen_string_literal: true
 
     def call(instance)
-      DataCleanup.logger.info("Checking #{instance.class}##{instance.id}...")
       Reporting.total_record_count += 1
       begin
         if instance.invalid?
-          DataCleanup.logger.info(<<~TEXT)
-            Instance #{instance.class}##{instance.id} invalid!
-            Errors: #{instance.errors.full_messages.to_sentence}
-          TEXT
           Reporting.invalid_record_count += 1
           Reporting.invalid_records << instance
-          DataCleanup.display("F", inline: true)
+          DataCleanup.logger.info("F", inline: true)
         else
-          DataCleanup.logger.info("Instance #{instance.class}##{instance.id} valid!")
-          DataCleanup.display(".", inline: true)
+          DataCleanup.logger.info(".", inline: true)
         end
       rescue Dragonfly::Job::Fetch::NotFound
-        DataCleanup.display(".", inline: true)
+        DataCleanup.logger.info(".", inline: true)
       end
     end
   end

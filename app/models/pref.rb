@@ -28,9 +28,10 @@ class Pref < ActiveRecord::Base
 
   validates :settings, presence: { message: PRESENCE_MESSAGE }
 
-  # The default preferences
+  ##
+  # Returns the hash generated from default preferences
   #
-  # Returns Hash
+  # @return [JSON] preferences hash
   def self.default_settings
     Branding.fetch(:preferences)
   end

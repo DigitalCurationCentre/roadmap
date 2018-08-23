@@ -37,7 +37,7 @@
           </thead>
           <tbody>
             <% phase.sections.each do |section| %>
-              <tr id="<%= dom_id(section) %>" data-number="<%= section.number %>">
+              <tr>
                 <td><p><%= section.title %></p></td>
                 <td>
                   <% if section.questions.present? %>

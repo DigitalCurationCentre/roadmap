@@ -1,3 +1,0 @@
-inherit_gem:
-  rubocop-dmp_roadmap:
-    - config/default.yml

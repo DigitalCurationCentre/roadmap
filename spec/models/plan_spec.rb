@@ -732,35 +732,13 @@ describe Plan do
 
     subject { plan }
 
-    context "when User is Super admin & system permission" do
+    context "when User has super admin permission" do
 
       before do
         user.perms << create(:perm, name: "add_organisations")
-        Branding.expects(:fetch)
-                .with(:service_configuration, :plans, :super_admins_read_all)
-                .returns(true)
-        Branding.expects(:fetch)
-                .with(:service_configuration, :plans, :org_admins_read_all)
-                .returns(false)
       end
 
       it { is_expected.to be_readable_by(user) }
-
-    end
-
-    context "when User is Super admin & not system permission" do
-
-      before do
-        user.perms << create(:perm, name: "add_organisations")
-        Branding.expects(:fetch)
-                .with(:service_configuration, :plans, :super_admins_read_all)
-                .returns(false)
-        Branding.expects(:fetch)
-                .with(:service_configuration, :plans, :org_admins_read_all)
-                .returns(false)
-      end
-
-      it { is_expected.not_to be_readable_by(user) }
 
     end
 
@@ -771,9 +749,6 @@ describe Plan do
         Branding.expects(:fetch)
                 .with(:service_configuration, :plans, :org_admins_read_all)
                 .returns(true)
-        Branding.expects(:fetch)
-                .with(:service_configuration, :plans, :super_admins_read_all)
-                .returns(false)
       end
 
       it { is_expected.to be_readable_by(user) }
@@ -786,9 +761,6 @@ describe Plan do
         user.perms << create(:perm, name: "grant_permissions")
         Branding.expects(:fetch)
                 .with(:service_configuration, :plans, :org_admins_read_all)
-                .returns(false)
-        Branding.expects(:fetch)
-                .with(:service_configuration, :plans, :super_admins_read_all)
                 .returns(false)
       end
 
@@ -805,9 +777,6 @@ describe Plan do
         Branding.expects(:fetch)
                 .with(:service_configuration, :plans, :org_admins_read_all)
                 .returns(true)
-        Branding.expects(:fetch)
-                .with(:service_configuration, :plans, :super_admins_read_all)
-                .returns(false)
       end
 
       it { is_expected.not_to be_readable_by(user) }
@@ -823,9 +792,6 @@ describe Plan do
         Branding.expects(:fetch)
                 .with(:service_configuration, :plans, :org_admins_read_all)
                 .returns(false)
-        Branding.expects(:fetch)
-                .with(:service_configuration, :plans, :super_admins_read_all)
-                .returns(false)
       end
 
       it { is_expected.not_to be_readable_by(user) }
@@ -839,9 +805,6 @@ describe Plan do
         Branding.expects(:fetch)
                 .with(:service_configuration, :plans, :org_admins_read_all)
                 .returns(true)
-        Branding.expects(:fetch)
-                .with(:service_configuration, :plans, :super_admins_read_all)
-                .returns(false)
       end
 
       it { is_expected.not_to be_readable_by(user) }
@@ -854,9 +817,6 @@ describe Plan do
         user.update(org: create(:org))
         Branding.expects(:fetch)
                 .with(:service_configuration, :plans, :org_admins_read_all)
-                .returns(false)
-        Branding.expects(:fetch)
-                .with(:service_configuration, :plans, :super_admins_read_all)
                 .returns(false)
       end
 

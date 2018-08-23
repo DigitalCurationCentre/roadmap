@@ -4,22 +4,26 @@
 #
 #  id                     :integer          not null, primary key
 #  abbreviation           :string
+#  banner_text            :text
 #  contact_email          :string
 #  contact_name           :string
 #  feedback_email_msg     :text
 #  feedback_email_subject :string
 #  feedback_enabled       :boolean          default(FALSE)
-#  is_other               :boolean          default(FALSE), not null
+#  is_other               :boolean
 #  links                  :text
+#  logo_file_name         :string
 #  logo_name              :string
 #  logo_uid               :string
 #  name                   :string
 #  org_type               :integer          default(0), not null
 #  sort_name              :string
 #  target_url             :string
+#  wayfless_entity        :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  language_id            :integer
+#  parent_id              :integer
 #  region_id              :integer
 #
 # Foreign Keys
@@ -73,7 +77,8 @@ class Org < ActiveRecord::Base
   validates :name, presence: { message: PRESENCE_MESSAGE },
                    uniqueness: { message: UNIQUENESS_MESSAGE }
 
-  validates :abbreviation, presence: { message: PRESENCE_MESSAGE }
+  validates :abbreviation, presence: { message: PRESENCE_MESSAGE },
+                           uniqueness: { message: UNIQUENESS_MESSAGE }
 
   validates :is_other, inclusion: { in: BOOLEAN_VALUES,
                                     message: INCLUSION_MESSAGE }
@@ -133,9 +138,7 @@ class Org < ActiveRecord::Base
   # What do they do? do they do it efficiently, and do we need them?
 
   # Determines the locale set for the organisation
-  #
-  # Returns String
-  # Returns nil
+  # @return String or nil
   def get_locale
     if !self.language.nil?
       return self.language.abbreviation
@@ -144,14 +147,16 @@ class Org < ActiveRecord::Base
     end
   end
 
-  # TODO: Should these be hardcoded? Also, an Org can currently be multiple org_types at
-  # one time. For example you can do: funder = true; project = true; school = true
+# TODO: Should these be hardcoded? Also, an Org can currently be multiple org_types at one time.
+#       For example you can do: funder = true; project = true; school = true
+#       Calling type in the above scenario returns "Funder" which is a bit misleading
+#       Is FlagShihTzu's Bit flag the appropriate structure here or should we use an enum?
+#       Tests are setup currently to work with this issue.
+  ##
+  # returns the name of the type of the organisation as a string
+  # defaults to none if no org type present
   #
-  # Calling type in the above scenario returns "Funder" which is a bit misleading
-  # Is FlagShihTzu's Bit flag the appropriate structure here or should we use an enum?
-  # Tests are setup currently to work with this issue.
-  #
-  # Returns String
+  # @return [String]
   def org_type_to_s
     ret = []
     ret << "Institution" if self.institution?
@@ -168,17 +173,17 @@ class Org < ActiveRecord::Base
   end
 
   ##
-  # The name of the organisation
+  # returns the name of the organisation
   #
-  # Returns String
+  # @return [String]
   def to_s
     name
   end
 
   ##
-  # The abbreviation for the organisation if it exists, or the name if not
+  # returns the abbreviation for the organisation if it exists, or the name if not
   #
-  # Returns String
+  # @return [String] name or abbreviation of the organisation
   def short_name
     if abbreviation.nil? then
       return name
@@ -188,9 +193,9 @@ class Org < ActiveRecord::Base
   end
 
   ##
-  # All published templates belonging to the organisation
+  # returns all published templates belonging to the organisation
   #
-  # Returns ActiveRecord::Relation
+  # @return [Array<Template>] published templates
   def published_templates
     return templates.where("published = ?", true)
   end

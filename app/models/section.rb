@@ -56,9 +56,7 @@ class Section < ActiveRecord::Base
   # =============
 
   # TODO: Move this down to DB constraints
-  before_validation :set_modifiable
-
-  before_validation :set_number
+  before_validation :set_defaults
 
   # =====================
   # = Nested Attributes =
@@ -74,21 +72,24 @@ class Section < ActiveRecord::Base
 
   # The sections for this Phase that have been added by the admin
   #
-  # Returns ActiveRecord::Relation
+  # @!scope class
+  # @return [ActiveRecord::Relation] Returns the sections that are modifiable
   scope :modifiable, -> { where(modifiable: true) }
 
   # The sections for this Phase that were part of the original Template
   #
-  # Returns ActiveRecord::Relation
+  # @!scope class
+  # @return [ActiveRecord::Relation] Returns the sections that aren't modifiable
   scope :not_modifiable, -> { where(modifiable: false) }
 
   # ===========================
   # = Public instance methods =
   # ===========================
 
-  # The title of the Section
+  ##
+  # return the title of the section
   #
-  # Returns String
+  # @return [String] the title of the section
   def to_s
     "#{title}"
   end
@@ -112,23 +113,13 @@ class Section < ActiveRecord::Base
     return copy
   end
 
-  # Can't be modified as it was duplicatd over from another Phase.
-  def template?
-    !modifiable?
-  end
-
   private
 
   # ============================
   # = Private instance methods =
   # ============================
 
-  def set_modifiable
+  def set_defaults
     self.modifiable = true if modifiable.nil?
-  end
-
-  def set_number
-    return if phase.nil?
-    self.number ||= phase.sections.maximum(:number) + 1
   end
 end

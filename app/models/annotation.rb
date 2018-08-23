@@ -58,11 +58,11 @@ class Annotation < ActiveRecord::Base
   # = Class Methods =
   # =================
 
-  # Deep copy the given annotation and all it's associations
+  ##
+  # deep copy the given annotation and all it's associations
   #
-  # annotation - To be deep copied
-  #
-  # Returns Annotation
+  # @params [Annotation] annotation to be deep copied
+  # @return [Annotation] the saved, copied annotation
   def self.deep_copy(annotation)
     annotation_copy = annotation.dup
     annotation_copy.save!
@@ -73,9 +73,10 @@ class Annotation < ActiveRecord::Base
   # = Public instance methods =
   # ===========================
 
-  # The text from the annotation
+  ##
+  # returns the text from the annotation
   #
-  # Returns String
+  # @return [String] the text from the annotation
   def to_s
     "#{text}"
   end

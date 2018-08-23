@@ -10,9 +10,7 @@ module DataCleanup
         end
 
         def call
-          ids = ::UserIdentifier.where(user: nil).ids
-          log("Destroying UserIdentifier where ids: #{ids} (no user)")
-          ::UserIdentifier.destroy(ids)
+          ::UserIdentifier.where(user: nil).destroy_all
         end
       end
     end

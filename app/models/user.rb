@@ -32,7 +32,9 @@
 #  updated_at             :datetime         not null
 #  invited_by_id          :integer
 #  language_id            :integer
+#  orcid_id               :string
 #  org_id                 :integer
+#  shibboleth_id          :string
 #
 # Indexes
 #
@@ -132,11 +134,7 @@ class User < ActiveRecord::Base
   # = Callbacks =
   # =============
 
-  before_update :clear_other_organisation, if: :org_id_changed?
-
-  after_update :delete_perms!, if: :org_id_changed?, unless: :can_change_org?
-
-  after_update :remove_token!, if: :org_id_changed?, unless: :can_change_org?
+  after_update :when_org_changes
 
   # =================
   # = Class methods =
@@ -154,9 +152,8 @@ class User < ActiveRecord::Base
   # = Public instance methods =
   # ===========================
 
+  ##
   # This method uses Devise's built-in handling for inactive users
-  #
-  # Returns Boolean
   def active_for_authentication?
     super && active?
   end
@@ -166,9 +163,7 @@ class User < ActiveRecord::Base
   # What do they do? do they do it efficiently, and do we need them?
 
   # Determines the locale set for the user or the organisation he/she belongs
-  #
-  # Returns String
-  # Returns nil
+  # @return String or nil
   def get_locale
     if !self.language.nil?
       return self.language.abbreviation
@@ -179,11 +174,11 @@ class User < ActiveRecord::Base
     end
   end
 
-  # Gives either the name of the user, or the email if name unspecified
+  ##
+  # gives either the name of the user, or the email if name unspecified
   #
-  # user_email - Use the email if there is no firstname or surname (defaults: true)
-  #
-  # Returns String
+  # @param user_email [Boolean] defaults to true, allows the use of email if there is no firstname or surname
+  # @return [String] the email or the firstname and surname of the user
   def name(use_email = true)
     if (firstname.blank? && surname.blank?) || use_email then
       return email
@@ -193,102 +188,113 @@ class User < ActiveRecord::Base
     end
   end
 
-  # The user's identifier for the specified scheme name
+  ##
+  # Returns the user's identifier for the specified scheme name
   #
-  # scheme - The identifier scheme name (e.g. ORCID)
-  #
-  # Returns UserIdentifier
+  # @param the identifier scheme name (e.g. ORCID)
+  # @return [UserIdentifier] the user's identifier for that scheme
   def identifier_for(scheme)
     user_identifiers.where(identifier_scheme: scheme).first
   end
 
-  # Checks if the user is a super admin. If the user has any privelege which requires
-  # them to see the super admin page then they are a super admin.
+  ##
+  # checks if the user is a super admin
+  # if the user has any privelege which requires them to see the super admin page
+  # then they are a super admin
   #
-  # Returns Boolean
+  # @return [Boolean] true if the user is an admin
   def can_super_admin?
     return self.can_add_orgs? || self.can_grant_api_to_orgs? || self.can_change_org?
   end
 
-  # Checks if the user is an organisation admin if the user has any privlege which
-  # requires them to see the org-admin pages then they are an org admin.
+  ##
+  # checks if the user is an organisation admin
+  # if the user has any privlege which requires them to see the org-admin pages
+  # then they are an org admin
   #
-  # Returns Boolean
+  # @return [Boolean] true if the user is an organisation admin
   def can_org_admin?
     return self.can_grant_permissions? || self.can_modify_guidance? ||
            self.can_modify_templates? || self.can_modify_org_details?
   end
 
-  # Can the User add new organisations?
+  ##
+  # checks if the user can add new organisations
   #
-  # Returns Boolean
+  # @return [Boolean] true if the user can add new organisations
   def can_add_orgs?
     perms.include? Perm.add_orgs
   end
 
-  # Can the User change their organisation affiliations?
+  ##
+  # checks if the user can change their organisation affiliations
   #
-  # Returns Boolean
+  # @return [Boolean] true if the user can change their organisation affiliations
   def can_change_org?
     perms.include? Perm.change_affiliation
   end
 
-  # Can the User can grant their permissions to others?
+  ##
+  # checks if the user can grant their permissions to others
   #
-  # Returns Boolean
+  # @return [Boolean] true if the user can grant their permissions to others
   def can_grant_permissions?
     perms.include? Perm.grant_permissions
   end
 
-  # Can the User modify organisation templates?
+  ##
+  # checks if the user can modify organisation templates
   #
-  # Returns Boolean
+  # @return [Boolean] true if the user can modify organisation templates
   def can_modify_templates?
     self.perms.include? Perm.modify_templates
   end
 
-  # Can the User modify organisation guidance?
+  ##
+  # checks if the user can modify organisation guidance
   #
-  # Returns Boolean
+  # @return [Boolean] true if the user can modify organistion guidance
   def can_modify_guidance?
     perms.include? Perm.modify_guidance
   end
 
-  # Can the User use the API?
+  ##
+  # checks if the user can use the api
   #
-  # Returns Boolean
+  # @return [Boolean] true if the user can use the api
   def can_use_api?
     perms.include? Perm.use_api
   end
 
-  # Can the User modify their org's details?
+  ##
+  # checks if the user can modify their org's details
   #
-  # Returns Boolean
+  # @return [Boolean] true if the user can modify the org's details
   def can_modify_org_details?
     perms.include? Perm.change_org_details
   end
 
+
   ##
-  # Can the User grant the api to organisations?
+  # checks if the user can grant the api to organisations
   #
-  # Returns Boolean
+  # @return [Boolean] true if the user can grant api permissions to organisations
   def can_grant_api_to_orgs?
     perms.include? Perm.grant_api
   end
 
-  # Removes the api_token from the user
-  #
-  # Returns nil
-  # Returns Boolean
+  ##
+  # removes the api_token from the user
+  # modifies the user model
   def remove_token!
-    return if new_record?
-    update_column(:api_token, nil)
+    unless api_token.blank?
+      update_column(:api_token, "") unless new_record?
+    end
   end
 
-  # Generates a new token for the user unless the user already has a token.
-  #
-  # Returns nil
-  # Returns Boolean
+  ##
+  # generates a new token for the user unless the user already has a token.
+  # modifies the user's model.
   def keep_or_generate_token!
     if api_token.nil? || api_token.empty?
       self.api_token = loop do
@@ -299,9 +305,10 @@ class User < ActiveRecord::Base
     end
   end
 
-  # The User's preferences for a given base key
+  ##
+  # Return the user's preferences for a given base key
   #
-  # Returns Hash
+  # @return [JSON] with symbols as keys
   def get_preferences(key)
     defaults = Pref.default_settings[key.to_sym] || Pref.default_settings[key.to_s]
 
@@ -323,19 +330,17 @@ class User < ActiveRecord::Base
     end
   end
 
+  ##
   # Override devise_invitable email title
+  # --------------------------------------------------------------
   def deliver_invitation(options = {})
     super(options.merge(subject: _('A Data Management Plan in %{application_name} has been shared with you') % {application_name: Rails.configuration.branding[:application][:name]}))
   end
-
+  ##
   # Case insensitive search over User model
-  #
-  # field - The name of the field being queried
-  # val   - The String to search for, case insensitive. val is duck typed to check
-  #         whether or not downcase method exist.
-  #
-  # Returns ActiveRecord::Relation
-  # Raises ArgumentError
+  # @param field [string] The name of the field being queried
+  # @param val [string] The string to search for, case insensitive. val is duck typed to check whether or not downcase method exist
+  # @return [ActiveRecord::Relation] The result of the search
   def self.where_case_insensitive(field, val)
     unless columns.map(&:name).include?(field.to_s)
       raise ArgumentError, "Field #{field} is not present on users table"
@@ -343,12 +348,8 @@ class User < ActiveRecord::Base
     User.where("LOWER(#{field}) = :value", value: val.to_s.downcase)
   end
 
-  # Acknowledge a Notification
-  #
-  # notification - Notification to acknowledge
-  #
-  # Returns ActiveRecord::Associations::CollectionProxy
-  # Returns nil
+  # Acknoledge a Notification
+  # @param notification Notification to acknowledge
   def acknowledge(notification)
     notifications << notification if notification.dismissable?
   end
@@ -359,11 +360,12 @@ class User < ActiveRecord::Base
   # = Private instance methods =
   # ============================
 
-  def delete_perms!
-    perms.destroy_all
-  end
-
-  def clear_other_organisation
-    self.other_organisation = nil
+  def when_org_changes
+    if org_id != org_id_was
+      unless can_change_org?
+        perms.delete_all
+        remove_token!
+      end
+    end
   end
 end

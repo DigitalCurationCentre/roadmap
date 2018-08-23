@@ -11,13 +11,7 @@ module DataCleanup
         end
 
         def call
-          # Find all exported plans where the corresponding plan doesn't exist.
-          ::ExportedPlan
-            .joins("LEFT OUTER JOIN plans on plans.id = exported_plans.plan_id")
-            .where(plans: { id: nil }).each do |exported_plan|
-            log("Destroying ExportedPlan##{exported_plan.id} where plan is nil")
-            exported_plan.destroy
-          end
+          ::ExportedPlan.where(plan: nil).delete_all
         end
       end
     end

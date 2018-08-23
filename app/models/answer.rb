@@ -65,9 +65,8 @@ class Answer < ActiveRecord::Base
   ##
   # deep copy the given answer
   #
-  # answer - question_option to be deep copied
-  #
-  # Returns Answer
+  # @params [Answer] question_option to be deep copied
+  # @return [Answer] the saved, copied answer
   def self.deep_copy(answer)
     answer_copy = answer.dup
     answer.question_options.each do |opt|
@@ -76,19 +75,14 @@ class Answer < ActiveRecord::Base
     answer_copy
   end
 
-  # This method helps to decide if an answer option (:radiobuttons, :checkbox, etc ) in
-  # form views should be checked or not
-  #
-  # Returns Boolean
+  # This method helps to decide if an answer option (:radiobuttons, :checkbox, etc ) in form views should be checked or not
+  # Returns true if the given option_id is present in question_options, otherwise returns false
   def has_question_option(option_id)
     self.question_option_ids.include?(option_id)
   end
 
-  # If the answer's question is option_based, it is checked if exist any question_option
-  # selected. For non option_based (e.g. textarea or textfield), it is checked the
-  # presence of text
-  #
-  # Returns Boolean
+  # Returns true if the answer is valid and false otherwise. If the answer's question is option_based, it is checked if exist
+  # any question_option selected. For non option_based (e.g. textarea or textfield), it is checked the presence of text
   def is_valid?
     if self.question.present?
       if self.question.question_format.option_based?
@@ -100,17 +94,16 @@ class Answer < ActiveRecord::Base
     return false
   end
 
-  # Answer notes whose archived is blank sorted by updated_at in descending order
-  #
-  # Returns Array
+  # Returns answer notes whose archived is blank sorted by updated_at in descending order
   def non_archived_notes
     return notes.select{ |n| n.archived.blank? }.sort!{ |x,y| y.updated_at <=> x.updated_at }
   end
 
-  # Returns True if answer text is blank, false otherwise specificly we want to remove
-  # empty hml tags and check.
+  ##
+  # Returns True if answer text is blank, false otherwise
+  # specificly we want to remove empty hml tags and check
   #
-  # Returns Boolean
+  # @return [Boolean] is the answer's text blank
   def is_blank?
     if self.text.present?
       return self.text.gsub(/<\/?p>/, '').gsub(/<br\s?\/?>/, '').chomp.blank?
@@ -119,10 +112,14 @@ class Answer < ActiveRecord::Base
     return true
   end
 
-  # The parsed JSON hash for the current answer object. Generates a new hash if none
-  # exists for rda_questions.
+  ##
+  # Returns the parsed JSON hash for the current answer object
+  # Generates a new hash if none exists for rda_questions
   #
-  # Returns Hash
+  # @return [Hash] the parsed hash of the answer.
+  #                Should have keys 'standards', 'text'
+  #                'standards' is a list of <std_id>: <title> pairs
+  #                'text' is the text from the comments box
   def answer_hash
     default = {'standards' => {}, 'text' => ''}
     begin
@@ -134,13 +131,12 @@ class Answer < ActiveRecord::Base
   end
 
   ##
-  # Given a hash of standards and a comment value, this updates answer text for
-  # rda_questions
+  # Given a hash of standards and a comment value, this updates answer
+  # text for rda_questions
   #
-  # standards - A Hash of standards
-  # text      - A String with option comment text
-  #
-  # Returns String
+  # @param [standards] a hash of standards
+  # @param [text]  option comment text
+  # nothing returned, but the status of the text field of the answer is changed
   def update_answer_hash(standards={},text="")
     h = {}
     h['standards'] = standards

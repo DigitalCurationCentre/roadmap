@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 module DataCleanup
   module Rules
     # Fix duplicate number on Phase
@@ -17,10 +16,9 @@ module DataCleanup
           data.each do |values, count|
             number, template_id = *values
             ids = ::Phase.where(template_id: template_id)
-                         .order("number, id")
+                         .order("number ASC, created_at ASC")
                          .pluck(:id)
             template = ::Template.find(template_id)
-            log("Reordering Phase number within Template##{template.id}")
             ::Phase.update_numbers!(*ids, parent: template)
           end
         end
