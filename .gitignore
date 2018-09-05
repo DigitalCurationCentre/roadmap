@@ -89,6 +89,7 @@ lib/assets/.eslintcache
 .byebug_history
 lib/data_cleanup/rules/org/fix_blank_abbreviation.yml
 .rspec
+
 /public/packs
 /public/packs-test
 /node_modules
@@ -100,3 +101,5 @@ yarn-error.log
 /node_modules
 yarn-debug.log*
 .yarn-integrity
+.env
+
