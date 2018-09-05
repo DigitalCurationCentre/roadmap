@@ -2,9 +2,9 @@ PATH
   remote: ../roadmap-extension
   specs:
     roadmap-extension (0.1.0)
-      mysql2
       pg
-      rails
+      rack-cors
+      rails (= 4.2.10)
 
 GEM
   remote: https://rubygems.org/
@@ -254,6 +254,7 @@ GEM
     pundit (2.0.0)
       activesupport (>= 3.0.0)
     rack (1.6.10)
+    rack-cors (1.0.2)
     rack-mini-profiler (1.0.0)
       rack (>= 1.2.0)
     rack-test (0.6.3)
