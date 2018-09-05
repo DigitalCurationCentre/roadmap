@@ -86,8 +86,7 @@ gem 'dragonfly'
 # Provides binaries for WKHTMLTOPDF project in an easily accessible package.
 gem 'wkhtmltopdf-binary'
 
-# A thin and fast web server (http://code.macournoyer.com/thin/)
-gem 'thin'
+gem 'puma'
 
 # PDF generator (from HTML) gem for Ruby on Rails (https://github.com/mileszs/wicked_pdf)
 gem 'wicked_pdf'

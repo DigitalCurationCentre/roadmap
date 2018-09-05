@@ -2,5 +2,7 @@ source "https://rubygems.org"
 
 eval_gemfile "Gemfile" if File.exist?("Gemfile")
 
-gem 'roadmap-extension',
-    git: "git@github.com:DigitalCurationCentre/roadmap-extension.git"
+# gem 'roadmap-extension',
+#     git: "git@github.com:DigitalCurationCentre/roadmap-extension.git"
+
+gem "roadmap-extension", path: "/Users/Gavin/Clients/DMP/DCCRoadmap/roadmap-extension"
