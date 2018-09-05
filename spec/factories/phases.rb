@@ -29,6 +29,7 @@ FactoryBot.define do
     sequence(:number)
     template
     modifiable { false }
+
     transient do
       sections { 0 }
     end
