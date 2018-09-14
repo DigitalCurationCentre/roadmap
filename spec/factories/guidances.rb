@@ -23,6 +23,7 @@ FactoryBot.define do
     text { Faker::Lorem.sentence }
     guidance_group
     published { false }
+
     before(:create) do |guidance, evaluator|
       guidance.themes << create_list(:theme, 2)
     end

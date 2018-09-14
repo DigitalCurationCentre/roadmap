@@ -1,4 +1,7 @@
 Rails.application.configure do
+  # Verifies that versions and hashed value of the package contents in the project's
+  # package.json
+  config.webpacker.check_yarn_integrity = false
 
   config.i18n.available_locales = %w[en en_GB]
 
@@ -43,9 +46,5 @@ Rails.application.configure do
     ActiveRecord::Base.logger.level = Logger::INFO
     ActiveRecord::Base.logger.level = Logger::DEBUG
   end
-  # Assets pipeline
-  config.assets.enabled = false
-  config.assets.debug = false
-  config.assets.compile = false
-  config.assets.quiet = true
+
 end
