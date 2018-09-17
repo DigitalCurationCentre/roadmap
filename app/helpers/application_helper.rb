@@ -2,25 +2,6 @@
 
 module ApplicationHelper
 
-  def javascript_manifest_file
-    if Rails.application.config.action_view.javascript_manifest_resolver
-      Rails.application.config.action_view.javascript_manifest_resolver.call(request)
-    else
-      "application"
-    end
-  end
-
-  def stylesheet_manifest_file
-    if Rails.application.config.action_view.stylesheet_manifest_resolver
-      logger.debug('stylesheet_manifest_file')
-      logger.debug(Rails.application.config.action_view.stylesheet_manifest_resolver.call(request))
-
-      Rails.application.config.action_view.stylesheet_manifest_resolver.call(request)
-    else
-      "application"
-    end
-  end
-
   def resource_name
     :user
   end
