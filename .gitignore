@@ -92,3 +92,4 @@ lib/data_cleanup/rules/org/fix_blank_abbreviation.yml
 .rspec
 .env
 package-lock.json
+node_modules
