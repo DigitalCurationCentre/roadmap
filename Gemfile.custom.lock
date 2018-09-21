@@ -3,6 +3,7 @@ PATH
   specs:
     roadmap-extension (0.1.0)
       dotenv-rails
+      jwt
       pg
       rails (= 4.2.10)
 
