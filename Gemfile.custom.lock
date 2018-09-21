@@ -1,5 +1,6 @@
-PATH
-  remote: ../roadmap-extension
+GIT
+  remote: git@github.com:DigitalCurationCentre/roadmap-extension.git
+  revision: a28409c1cf9c7350eee79a02975547ae37b035ae
   specs:
     roadmap-extension (0.1.0)
       dotenv-rails
