@@ -7,6 +7,8 @@ ruby '>= 2.4.0'
 # Full-stack web application framework. (http://www.rubyonrails.org)
 gem 'rails', '~> 4.2.10'
 
+gem "rake"
+
 # Tools for creating, working with, and running Rails applications. (http://www.rubyonrails.org)
 gem 'railties'
 
