@@ -477,6 +477,7 @@ DEPENDENCIES
   rack-mini-profiler
   rails (~> 4.2.10)
   railties
+  rake
   recaptcha
   responders (~> 2.0)
   rspec-collection_matchers
