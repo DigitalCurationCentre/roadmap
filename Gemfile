@@ -93,7 +93,7 @@ gem "sassc-rails"
 
 gem 'font-awesome-sass', '~> 4.2.0'
 
-gem 'webpacker', '>= 4.0.x'
+gem 'webpacker', '~> 3.5'
 
 gem "autoprefixer-rails"
 
