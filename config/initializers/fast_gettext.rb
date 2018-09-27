@@ -9,11 +9,11 @@ if Language.table_exists?
   end
 else
   def default_locale
-    Rails.application.config.i18n.available_locales.first
+    available_locales.first
   end
 
   def available_locales
-    Rails.application.config.i18n.available_locales
+    Rails.application.config.i18n.available_locales || []
   end
 end
 
