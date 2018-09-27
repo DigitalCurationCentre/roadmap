@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/DMPRoadmap/roadmap#readme",
   "dependencies": {
-    "@rails/webpacker": "4.0.0-pre.2",
+    "@rails/webpacker": "https://github.com/rails/webpacker.git",
     "bootstrap-sass": "3.3.7",
     "chart.js": "^2.7.2",
     "eslint-config-airbnb-base": "^13.1.0",
@@ -35,8 +35,7 @@
     "popper": "^1.0.1",
     "postcss-preset-env": "^5.3.0",
     "timeago.js": "^3.0.2",
-    "tinymce": "^4.8.2",
-    "webpack": "^4.0.0"
+    "tinymce": "^4.8.2"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
@@ -61,9 +60,9 @@
     "karma-ng-html2js-define-preprocessor": "^1.1.0",
     "karma-ng-html2js-preprocessor": "^1.0.0",
     "karma-safari-launcher": "^1.0.0",
-    "karma-webpack": "^3.0.4",
+    "karma-webpack": "^3.0.5",
     "phantomjs-polyfill": "^0.0.2",
-    "webpack-cli": "^3.1.0",
-    "webpack-dev-server": "^3.1.8"
+    "webpack-cli": "^3.1.1",
+    "webpack-dev-server": "^3.1.9"
   }
 }

@@ -83,9 +83,6 @@ config/locale/*/app.edit.po
 config/locale/*/app.po.time_stamp
 
 # Front-end related
-lib/assets/node_modules
-lib/assets/npm-debug.log
-lib/assets/.eslintcache
 !.keep
 .byebug_history
 lib/data_cleanup/rules/org/fix_blank_abbreviation.yml
@@ -93,3 +90,7 @@ lib/data_cleanup/rules/org/fix_blank_abbreviation.yml
 .env
 package-lock.json
 node_modules
+/public/packs
+/public/packs-test
+yarn-debug.log*
+.yarn-integrity
