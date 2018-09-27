@@ -94,3 +94,4 @@ node_modules
 /public/packs-test
 yarn-debug.log*
 .yarn-integrity
+yarn-error.log
