@@ -9,7 +9,7 @@ if Language.table_exists?
   end
 else
   def default_locale
-    available_locales.first
+    available_locales.first || 'en-GB'
   end
 
   def available_locales
