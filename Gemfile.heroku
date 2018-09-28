@@ -1,10 +1,10 @@
 source "https://rubygems.org"
 
 if File.exist?("Gemfile")
-  puts "Gemfile found!"
+  raise "Gemfile found!"
   eval_gemfile "Gemfile"
 else
-  puts "Gemfile not found!"
+  raise "Gemfile not found!"
 end
 
 gem 'roadmap-extension',
