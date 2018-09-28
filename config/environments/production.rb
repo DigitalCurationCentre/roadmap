@@ -1,7 +1,7 @@
 Rails.application.configure do
-  # Verifies that versions and hashed value of the package contents in the project's package.json
-config.webpacker.check_yarn_integrity = false
-
+  # Verifies that versions and hashed value of the package contents in the project's
+  # package.json
+  config.webpacker.check_yarn_integrity = false
 
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -57,7 +57,8 @@ config.webpacker.check_yarn_integrity = false
   # config.action_controller.asset_host = 'http://assets.example.com'
 
   # Ignore bad email addresses and do not raise email delivery errors.
-  # Set this to true and configure the email server for immediate delivery to raise delivery errors.
+  # Set this to true and configure the email server for immediate delivery to raise
+  # delivery errors.
   # config.action_mailer.raise_delivery_errors = false
 
   # Set default host for mailer URLs

@@ -1,9 +1,7 @@
 Rails.application.configure do
-  # Verifies that versions and hashed value of the package contents in the project's package.json
-config.webpacker.check_yarn_integrity = true
-
-  # Verifies that versions and hashed value of the package contents in the project's package.json
-  # config.webpacker.check_yarn_integrity = true
+  # Verifies that versions and hashed value of the package contents in the project's
+  # package.json
+  config.webpacker.check_yarn_integrity = true
 
   config.i18n.available_locales = %w[en en_GB]
 
@@ -41,7 +39,9 @@ config.webpacker.check_yarn_integrity = true
 
   config.action_mailer.perform_deliveries = false
 
-  BetterErrors::Midleware.allow_ip! "10.0.2.2" if defined?(BetterErrors) && Rails.env == :development
+  if defined?(BetterErrors) && Rails.env.development?
+    BetterErrors::Midleware.allow_ip! "10.0.2.2"
+  end
 
   config.after_initialize do
     ActiveRecord::Base.logger = Rails.logger.clone
