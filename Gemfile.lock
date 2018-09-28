@@ -1,5 +1,5 @@
 GIT
-  remote: git@github.com:DigitalCurationCentre/roadmap-extension.git
+  remote: https://github.com/DigitalCurationCentre/roadmap-extension.git
   revision: b8db1a02ecc0ed23e41c29d064ede11923c3758b
   specs:
     roadmap-extension (0.1.0)

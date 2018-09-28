@@ -4,7 +4,7 @@ ruby '>= 2.4.0'
 
 # Private gem: DO NOT merge this into other repos
 gem 'roadmap-extension',
-    git: "git@github.com:DigitalCurationCentre/roadmap-extension.git"
+  git: "https://github.com/DigitalCurationCentre/roadmap-extension.git"
 
 
 # ------------------------------------------------
