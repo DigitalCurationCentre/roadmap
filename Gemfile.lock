@@ -1,3 +1,13 @@
+GIT
+  remote: git@github.com:DigitalCurationCentre/roadmap-extension.git
+  revision: b8db1a02ecc0ed23e41c29d064ede11923c3758b
+  specs:
+    roadmap-extension (0.1.0)
+      dotenv-rails
+      jwt
+      pg
+      rails (= 4.2.10)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -104,6 +114,10 @@ GEM
       devise (>= 4.0.0)
     diff-lcs (1.3)
     docile (1.3.1)
+    dotenv (2.5.0)
+    dotenv-rails (2.5.0)
+      dotenv (= 2.5.0)
+      railties (>= 3.2, < 6.0)
     dragonfly (1.1.5)
       addressable (~> 2.3)
       multi_json (~> 1.0)
@@ -486,6 +500,7 @@ DEPENDENCIES
   rake
   recaptcha
   responders (~> 2.0)
+  roadmap-extension!
   rspec-collection_matchers
   rspec-rails
   rubocop-dmp_roadmap (>= 1.1.0)

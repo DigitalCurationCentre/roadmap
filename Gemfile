@@ -2,6 +2,11 @@ source 'https://rubygems.org'
 
 ruby '>= 2.4.0'
 
+# Private gem: DO NOT merge this into other repos
+gem 'roadmap-extension',
+    git: "git@github.com:DigitalCurationCentre/roadmap-extension.git"
+
+
 # ------------------------------------------------
 # RAILS
 # Full-stack web application framework. (http://www.rubyonrails.org)
