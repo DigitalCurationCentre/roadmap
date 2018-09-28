@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/DigitalCurationCentre/roadmap-extension.git
-  revision: d1dfaa89f8dc8c69c830348fbf370d88224fed3d
+  revision: cc7d74a28d7fb2624429144becb8cb9a622ad5ff
   specs:
     roadmap-extension (0.1.0)
       dotenv-rails
