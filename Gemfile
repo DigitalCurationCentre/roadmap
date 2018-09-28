@@ -3,9 +3,10 @@ source 'https://rubygems.org'
 ruby '>= 2.4.0'
 
 # Private gem: DO NOT merge this into other repos
-gem 'roadmap-extension',
-  git: "https://github.com/DigitalCurationCentre/roadmap-extension.git"
+# gem 'roadmap-extension',
+#   git: "https://github.com/DigitalCurationCentre/roadmap-extension.git"
 
+gem "roadmap-extension", path: "/Users/Gavin/Clients/DMP/DCCRoadmap/"
 
 # ------------------------------------------------
 # RAILS
