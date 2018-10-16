@@ -5,7 +5,7 @@ module DataCleanup
     module Org
       class FixBlankLanguage < Rules::Base
 
-        DEFAULT_LANGUAGE = Language.find_by(abbreviation: FastGettext.default_locale)
+        DEFAULT_LANGUAGE = Language.find_by(abbreviation: "en-GB")
 
         def description
           "Fix blank language on Org"
