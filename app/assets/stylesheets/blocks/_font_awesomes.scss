@@ -16,17 +16,22 @@
   margin-top: $grid-gutter-width;
 }
 
+/* change color of search icon */
+.fa-search {
+  color: $color-text-white;
+}
+
 /* Links with fontawesome icons:
    fa-file-pdf-o and fa-file-word-o */
 a {
    i {
      &.fa {
-       
+
        &.fa-file-pdf-o,
        &.fa-file-word-o {
-         color: $color-black;
+         color: $color-brand-primary;
          margin: 5px;
-         
+
          &:not(.small) {
            font-size: 2.3em;
          }

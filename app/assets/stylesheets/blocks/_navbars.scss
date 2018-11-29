@@ -30,6 +30,11 @@
     line-height: 102px;
     height: 102px;
     padding-top: 0;
+    color: $navbar-branding-link-hover-color;
+    &:hover,
+    &:focus {
+      color: darken($navbar-branding-link-hover-color,10%)
+    }
   }
   #org-navbar .org-links {
     padding-top: $grid-gutter-width / 2;
@@ -146,15 +151,8 @@
     }
   }
 
-  .navbar-link {
-    color: $navbar-branding-link-color;
-    &:hover {
-      color: $navbar-branding-link-hover-color;
-    }
-  }
-
   .btn-link {
-    color: $navbar-branding-link-color;
+    color: $navbar-branding-link-hover-color;
     &:hover,
     &:focus {
       color: $navbar-branding-link-hover-color;
@@ -167,4 +165,9 @@
       }
     }
   }
+}
+
+
+.navbar-branding {
+  background-image: linear-gradient(180deg, $color-brand-dark, $navbar-branding-bg);
 }

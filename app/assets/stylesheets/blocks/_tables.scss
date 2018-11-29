@@ -5,6 +5,7 @@
 
 thead th {
   background-color: $color-border-default;
+  background-image: linear-gradient(180deg, $color-brand-dark, $navbar-branding-bg);
   color: $color-white;
 }
 
@@ -57,7 +58,7 @@ th.download-column {
     thead > tr > th {
       border: none;
       background-color: $color-background-white;
-      color: $color-text-black;
+      color: $color-text-white;
     }
     tbody > tr > td { border: none; }
   }
