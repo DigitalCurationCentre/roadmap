@@ -128,6 +128,16 @@ class Org < ActiveRecord::Base
     where("orgs.name LIKE ? OR orgs.contact_email LIKE ?", search_pattern, search_pattern)
   }
 
+  # Scope used in several controllers
+  scope :with_template_and_user_counts, -> {
+     joins("LEFT OUTER JOIN templates ON orgs.id = templates.org_id")
+       .joins("LEFT OUTER JOIN users ON orgs.id = users.org_id")
+       .group("orgs.id")
+       .select("orgs.*,
+                count(distinct templates.family_id) as template_count,
+                count(users.id) as user_count")
+  }
+
   before_validation :set_default_feedback_email_subject
   before_validation :check_for_missing_logo_file
   after_create :create_guidance_group
@@ -205,8 +215,11 @@ class Org < ActiveRecord::Base
   end
 
   def plans
-    Plan.includes(:template, :phases, :roles, :users).joins(:roles, :users).where('users.org_id = ? AND roles.access IN (?)',
-      self.id, Role.access_values_for(:owner).concat(Role.access_values_for(:administrator)))
+    plan_ids = Role.administrator
+                   .where(user_id: self.users.pluck(:id), active: true)
+                   .pluck(:plan_id).uniq
+    Plan.includes(:template, :phases, :roles, :users)
+        .where(id: plan_ids)
   end
 
   def grant_api!(token_permission_type)
