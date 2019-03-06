@@ -13,14 +13,21 @@ TranslationIO.configure do |config|
   # https://github.com/translation/rails#readme
 
   # Additional keys for multi-domain
-  config.multi_domain           = true
-  config.domain_names           = ['app', 'dmptuuli']
-  config.domain_api_keys        = ['1343b776dce845ae87642614df46ce36',
-                                    '843f5421120e42279b42c6fc19925b38']
-  config.domain_source_locales  = ['en', 'en']
-  config.domain_target_locales  = [['de', 'en-GB', 'en-US', 'es', 'fr-FR', 'fi', 'sv-FI', 'pt-BR'],
-                                   ['fi', 'sv-FI']]
-  config.domain_folders         = [[],['app/views/branded/']]
+  config.domains = [{
+      name: 'app',
+      api_key: ENV['TRANSLATION_API_ROADMAP'],
+      source_locale: 'en',
+      target_locales: ['de', 'en-GB', 'en-US', 'es', 'fr-FR', 'fi', 'sv-FI', 'pt-BR'],
+      folders: []
+    },
+    {
+      name: 'dmptuuli',
+      api_key: ENV['TRANSLATION_API_TUULI'],
+      source_locale: 'en',
+      target_locales: ['fi', 'sv-FI'],
+      folders: ['app/views/branded/']
+    }
+  ]
 end
 
 if Language.table_exists?

@@ -270,6 +270,8 @@ es:
         electrónico y visite el enlace para finalizar la confirmación de su nueva
         dirección de correo electrónico.
       updated: Ha actualizado tu cuenta correctamente.
+      updated_but_not_signed_in: Su cuenta se ha actualizado correctamente, pero como
+        se cambió su contraseña, debe iniciar sesión nuevamente
     sessions:
       signed_in: Ha iniciado sesión satisfactoriamente.
       signed_out: Ha cerrado la sesión satisfactoriamente.
@@ -331,7 +333,3 @@ es:
       previous: "&lsaquo; Anterior"
       next: Siguiente &rsaquo;
       truncate: "&hellip;"
-  multibyte:
-  - "\U0001F600"
-  - ðŸ~¡
-  - â ¤

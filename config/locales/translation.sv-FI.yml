@@ -2,7 +2,7 @@
 # IF YOU UPDATE IT, YOUR CHANGES WILL BE LOST AT THE NEXT SYNC.
 #
 # To update this file, use this translation interface:
-# https://translation.io/xsrust/dmptuuli/sv-FI
+# https://translation.io/xsrust/roadmap/sv-FI
 #
 ---
 sv-FI:
@@ -201,10 +201,6 @@ sv-FI:
       destroy:
         notice: "%{resource_name} framgångsrikt förstördes."
         alert: "%{resource_name} kunde inte förstöras."
-  multibyte:
-  - "\U0001F600"
-  - ð ¡
-  - â ¤
   devise:
     confirmations:
       confirmed: Ditt konto är bekräftat. Du kan nu logga in.
@@ -272,6 +268,8 @@ sv-FI:
         måste verifiera din nya e-postadress. Vänligen kolla din email och följ bekräfta
         länken för att bekräfta din nya e-postadress.
       updated: Ditt konto har uppdaterats framgångsrikt.
+      updated_but_not_signed_in: Ditt konto har uppdaterats, men eftersom ditt lösenord
+        har ändrats måste du logga in igen
     sessions:
       signed_in: Inloggad med framgång.
       signed_out: Utloggad framgångsrikt.

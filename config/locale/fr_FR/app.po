@@ -1,14 +1,14 @@
 # French translations for app package.
-# Copyright (C) 2018 app
+# Copyright (C) 2019 app
 # This file is distributed under the same license as the app package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2019.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0\n"
 "Report-Msgid-Bugs-To: contact@translation.io\n"
-"POT-Creation-Date: 2018-11-01 15:06+0000\n"
-"PO-Revision-Date: 2018-11-01 16:06+0100\n"
+"POT-Creation-Date: 2019-03-05 13:51+0000\n"
+"PO-Revision-Date: 2019-03-05 14:51+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
@@ -46,8 +46,8 @@ msgid "Bad Parameters"
 msgstr "Paramètres erronés"
 
 #: ../../app/controllers/api/v0/statistics_controller.rb:35
-#: ../../app/controllers/api/v0/statistics_controller.rb:83
-#: ../../app/controllers/api/v0/statistics_controller.rb:132
+#: ../../app/controllers/api/v0/statistics_controller.rb:73
+#: ../../app/controllers/api/v0/statistics_controller.rb:111
 msgid "Month"
 msgstr "Mois"
 
@@ -56,64 +56,64 @@ msgid "No. Users joined"
 msgstr "Nbre d'utilisateurs inscrits"
 
 #: ../../app/controllers/api/v0/statistics_controller.rb:38
-#: ../../app/controllers/api/v0/statistics_controller.rb:86
-#: ../../app/controllers/api/v0/statistics_controller.rb:135
+#: ../../app/controllers/api/v0/statistics_controller.rb:76
+#: ../../app/controllers/api/v0/statistics_controller.rb:114
 msgid "Total"
 msgstr "Total"
 
-#: ../../app/controllers/api/v0/statistics_controller.rb:83
+#: ../../app/controllers/api/v0/statistics_controller.rb:73
 msgid "No. Completed Plans"
 msgstr "Non. Plans terminés"
 
-#: ../../app/controllers/api/v0/statistics_controller.rb:132
+#: ../../app/controllers/api/v0/statistics_controller.rb:111
 msgid "No. Plans"
 msgstr "Non. Plans"
 
-#: ../../app/controllers/application_controller.rb:33
+#: ../../app/controllers/application_controller.rb:35
 msgid "You are not authorized to perform this action."
 msgstr "Vous n'êtes pas autorisé à effectuer cette opération."
 
-#: ../../app/controllers/application_controller.rb:35
+#: ../../app/controllers/application_controller.rb:37
 msgid "You need to sign in or sign up before continuing."
 msgstr "Vous devez vous connecter ou vous enregistrer afin de continuer."
 
-#: ../../app/controllers/application_controller.rb:101
+#: ../../app/controllers/application_controller.rb:103
 msgid "Unable to %{action} the %{object}.%{errors}"
 msgstr "Impossible de %{action} le %{object}. %{errors}"
 
-#: ../../app/controllers/application_controller.rb:109
+#: ../../app/controllers/application_controller.rb:111
 msgid "Successfully %{action} the %{object}."
 msgstr "Avec succès %{action} le %{object}."
 
-#: ../../app/controllers/application_controller.rb:124
+#: ../../app/controllers/application_controller.rb:126
 msgid "plan"
 msgstr "plan"
 
-#: ../../app/controllers/application_controller.rb:125
+#: ../../app/controllers/application_controller.rb:127
 msgid "guidance group"
 msgstr "Groupe de recommandations"
 
-#: ../../app/controllers/application_controller.rb:126
+#: ../../app/controllers/application_controller.rb:128
 msgid "comment"
 msgstr "Commentaire"
 
-#: ../../app/controllers/application_controller.rb:127
+#: ../../app/controllers/application_controller.rb:129
 msgid "organisation"
 msgstr "organisation"
 
-#: ../../app/controllers/application_controller.rb:128
+#: ../../app/controllers/application_controller.rb:130
 msgid "permission"
 msgstr "autorisation"
 
-#: ../../app/controllers/application_controller.rb:129
+#: ../../app/controllers/application_controller.rb:131
 msgid "preferences"
 msgstr "préférences"
 
-#: ../../app/controllers/application_controller.rb:130
+#: ../../app/controllers/application_controller.rb:132
 msgid "profile"
 msgstr "profil"
 
-#: ../../app/controllers/application_controller.rb:130
+#: ../../app/controllers/application_controller.rb:132
 msgid "user"
 msgstr "utilisateur"
 
@@ -190,7 +190,7 @@ msgstr "Une erreur s'est produite lors de la demande de commentaires sur ce plan
 #: ../../app/controllers/org_admin/sections_controller.rb:76
 #: ../../app/controllers/org_admin/templates_controller.rb:164
 #: ../../app/controllers/super_admin/notifications_controller.rb:38
-#: ../../app/controllers/super_admin/orgs_controller.rb:52
+#: ../../app/controllers/super_admin/orgs_controller.rb:54
 #: ../../app/controllers/super_admin/themes_controller.rb:22
 msgid "created"
 msgstr "créé"
@@ -202,9 +202,9 @@ msgstr "créé"
 #: ../../app/controllers/org_admin/questions_controller.rb:71
 #: ../../app/controllers/org_admin/sections_controller.rb:83
 #: ../../app/controllers/org_admin/templates_controller.rb:166
-#: ../../app/controllers/plans_controller.rb:130
+#: ../../app/controllers/plans_controller.rb:134
 #: ../../app/controllers/super_admin/notifications_controller.rb:41
-#: ../../app/controllers/super_admin/orgs_controller.rb:55
+#: ../../app/controllers/super_admin/orgs_controller.rb:57
 #: ../../app/controllers/super_admin/themes_controller.rb:25
 msgid "create"
 msgstr "Créer"
@@ -215,12 +215,12 @@ msgstr "Créer"
 #: ../../app/controllers/org_admin/sections_controller.rb:98
 #: ../../app/controllers/org_admin/templates_controller.rb:184
 #: ../../app/controllers/orgs_controller.rb:59
-#: ../../app/controllers/plans_controller.rb:220
-#: ../../app/controllers/plans_controller.rb:223
-#: ../../app/controllers/registrations_controller.rb:222
-#: ../../app/controllers/registrations_controller.rb:226
-#: ../../app/controllers/registrations_controller.rb:248
-#: ../../app/controllers/registrations_controller.rb:252
+#: ../../app/controllers/plans_controller.rb:224
+#: ../../app/controllers/plans_controller.rb:227
+#: ../../app/controllers/registrations_controller.rb:225
+#: ../../app/controllers/registrations_controller.rb:229
+#: ../../app/controllers/registrations_controller.rb:251
+#: ../../app/controllers/registrations_controller.rb:255
 #: ../../app/controllers/users_controller.rb:97
 #: ../../app/controllers/users_controller.rb:121
 msgid "saved"
@@ -232,11 +232,11 @@ msgstr "enregistré"
 #: ../../app/controllers/org_admin/sections_controller.rb:100
 #: ../../app/controllers/org_admin/templates_controller.rb:189
 #: ../../app/controllers/orgs_controller.rb:61
-#: ../../app/controllers/plans_controller.rb:229
-#: ../../app/controllers/plans_controller.rb:232
-#: ../../app/controllers/plans_controller.rb:237
-#: ../../app/controllers/registrations_controller.rb:229
-#: ../../app/controllers/registrations_controller.rb:255
+#: ../../app/controllers/plans_controller.rb:233
+#: ../../app/controllers/plans_controller.rb:236
+#: ../../app/controllers/plans_controller.rb:241
+#: ../../app/controllers/registrations_controller.rb:232
+#: ../../app/controllers/registrations_controller.rb:258
 msgid "save"
 msgstr "Enregistrer"
 
@@ -267,7 +267,7 @@ msgstr "annuler la publication"
 #: ../../app/controllers/org_admin/phases_controller.rb:157
 #: ../../app/controllers/org_admin/questions_controller.rb:128
 #: ../../app/controllers/org_admin/sections_controller.rb:127
-#: ../../app/controllers/plans_controller.rb:267
+#: ../../app/controllers/plans_controller.rb:271
 #: ../../app/controllers/super_admin/notifications_controller.rb:63
 #: ../../app/controllers/super_admin/themes_controller.rb:50
 msgid "deleted"
@@ -278,7 +278,7 @@ msgstr "supprimé"
 #: ../../app/controllers/org_admin/phases_controller.rb:159
 #: ../../app/controllers/org_admin/questions_controller.rb:130
 #: ../../app/controllers/org_admin/sections_controller.rb:129
-#: ../../app/controllers/plans_controller.rb:272
+#: ../../app/controllers/plans_controller.rb:276
 #: ../../app/controllers/super_admin/notifications_controller.rb:66
 #: ../../app/controllers/super_admin/themes_controller.rb:53
 msgid "delete"
@@ -296,13 +296,13 @@ msgstr ""
 
 #: ../../app/controllers/notes_controller.rb:124
 #: ../../app/controllers/org_admin/templates_controller.rb:215
-#: ../../app/controllers/super_admin/orgs_controller.rb:84
+#: ../../app/controllers/super_admin/orgs_controller.rb:86
 msgid "removed"
 msgstr "supprimé(e)"
 
 #: ../../app/controllers/notes_controller.rb:142
 #: ../../app/controllers/org_admin/templates_controller.rb:217
-#: ../../app/controllers/super_admin/orgs_controller.rb:87
+#: ../../app/controllers/super_admin/orgs_controller.rb:89
 msgid "remove"
 msgstr "Supprimer"
 
@@ -332,7 +332,7 @@ msgstr "Impossible de créer une nouvelle version de ce modèle."
 
 #: ../../app/controllers/org_admin/phases_controller.rb:130
 #: ../../app/controllers/org_admin/questions_controller.rb:98
-#: ../../app/controllers/plans_controller.rb:329
+#: ../../app/controllers/plans_controller.rb:333
 #: ../../app/controllers/super_admin/notifications_controller.rb:51
 #: ../../app/controllers/super_admin/themes_controller.rb:39
 #: ../../app/controllers/super_admin/users_controller.rb:27
@@ -342,18 +342,18 @@ msgstr "mis à jour"
 
 #: ../../app/controllers/org_admin/phases_controller.rb:132
 #: ../../app/controllers/org_admin/questions_controller.rb:100
-#: ../../app/controllers/plans_controller.rb:332
+#: ../../app/controllers/plans_controller.rb:336
 #: ../../app/controllers/super_admin/notifications_controller.rb:53
 #: ../../app/controllers/super_admin/themes_controller.rb:41
 #: ../../app/controllers/super_admin/users_controller.rb:29
 msgid "update"
 msgstr "Mise à jour"
 
-#: ../../app/controllers/org_admin/plans_controller.rb:35
+#: ../../app/controllers/org_admin/plans_controller.rb:33
 msgid "%{plan_owner} has been notified that you have finished providing feedback"
 msgstr "%{plan_owner} a été informé que vous avez finalisé l'assistance conseil"
 
-#: ../../app/controllers/org_admin/plans_controller.rb:42
+#: ../../app/controllers/org_admin/plans_controller.rb:40
 msgid "Unable to notify user that you have finished providing feedback."
 msgstr ""
 "Impossible de notifier à l'utilisateur que vous avez terminé l'assistance cons"
@@ -366,7 +366,7 @@ msgstr ""
 "xiste pas."
 
 #: ../../app/controllers/org_admin/template_copies_controller.rb:18
-#: ../../app/controllers/plans_controller.rb:311
+#: ../../app/controllers/plans_controller.rb:315
 msgid "copy"
 msgstr "copie"
 
@@ -452,27 +452,27 @@ msgstr "Votre organisme ne semble pas être correctement configurée."
 msgid "Please choose an organisation"
 msgstr "Veuillez choisir un organisme"
 
-#: ../../app/controllers/plan_exports_controller.rb:77
+#: ../../app/controllers/plan_exports_controller.rb:79
 msgid "Created using the %{application_name}. Last modified %{date}"
 msgstr "Créé avec %{application_name}. Dernière modification %{date}"
 
-#: ../../app/controllers/plans_controller.rb:55
+#: ../../app/controllers/plans_controller.rb:59
 msgid "Unable to identify a suitable template for your plan."
 msgstr "Impossible d'identifier un modèle approprié à votre plan."
 
-#: ../../app/controllers/plans_controller.rb:83
+#: ../../app/controllers/plans_controller.rb:87
 msgid "My Plan"
 msgstr "Mon plan"
 
-#: ../../app/controllers/plans_controller.rb:85
+#: ../../app/controllers/plans_controller.rb:89
 msgid " Plan"
 msgstr " Plan"
 
-#: ../../app/controllers/plans_controller.rb:309
+#: ../../app/controllers/plans_controller.rb:313
 msgid "copied"
 msgstr "copié"
 
-#: ../../app/controllers/plans_controller.rb:337
+#: ../../app/controllers/plans_controller.rb:341
 msgid ""
 "Unable to change the plan's status since it is needed at least %{percentage} p"
 "ercentage responded"
@@ -480,23 +480,23 @@ msgstr ""
 "Impossible de changer le statut du plan, au moins %{percentage} % de questions"
 " répondues sont nécessaires"
 
-#: ../../app/controllers/plans_controller.rb:345
+#: ../../app/controllers/plans_controller.rb:349
 msgid "Unable to find plan id %{plan_id}"
 msgstr "Impossible de trouver le plan avec l'identifiant %{plan_id}"
 
-#: ../../app/controllers/plans_controller.rb:359
+#: ../../app/controllers/plans_controller.rb:363
 msgid "Your project is now a test."
 msgstr "Votre projet est maintenant un test."
 
-#: ../../app/controllers/plans_controller.rb:359
+#: ../../app/controllers/plans_controller.rb:363
 msgid "Your project is no longer a test."
 msgstr "Votre projet n'est plus un test."
 
-#: ../../app/controllers/plans_controller.rb:363
+#: ../../app/controllers/plans_controller.rb:367
 msgid "Unable to change the plan's test status"
 msgstr "Impossible de changer le statut du plan"
 
-#: ../../app/controllers/plans_controller.rb:377
+#: ../../app/controllers/plans_controller.rb:381
 msgid "There is no plan associated with id %{id}"
 msgstr "Il n'existe aucun plan associé à l'identifiant %{id}"
 
@@ -504,7 +504,7 @@ msgstr "Il n'existe aucun plan associé à l'identifiant %{id}"
 msgid "Template created using the %{application_name} service. Last modified %{date}"
 msgstr "Modèle créé avec %{application_name}. Dernière modification %{date}"
 
-#: ../../app/controllers/public_pages_controller.rb:70
+#: ../../app/controllers/public_pages_controller.rb:71
 msgid "Unable to download the DMP Template at this time."
 msgstr "Impossible de télécharger le modèle de DMP pour le moment."
 
@@ -578,15 +578,23 @@ msgstr "S'il vous plaît entrer un nom de famille."
 msgid "Please enter your password to change email address."
 msgstr "Veuillez saisir votre mot de passe pour changer l'adresse électronique."
 
-#: ../../app/controllers/registrations_controller.rb:236
+#: ../../app/controllers/registrations_controller.rb:193
+msgid ""
+"Save unsuccessful. That email address is already registered. You must enter a "
+"unique email address."
+msgstr ""
+"Enregistrer sans succès. Cette adresse email est déjà enregistrée. Vous devez "
+"entrer une adresse email unique."
+
+#: ../../app/controllers/registrations_controller.rb:239
 msgid "Please enter your current password"
 msgstr "Veuillez entrer votre mot de passe actuel"
 
-#: ../../app/controllers/registrations_controller.rb:238
+#: ../../app/controllers/registrations_controller.rb:241
 msgid "Please enter a password confirmation"
 msgstr "Veuillez confirmer votre mot de passe"
 
-#: ../../app/controllers/registrations_controller.rb:240
+#: ../../app/controllers/registrations_controller.rb:243
 msgid "Password and comfirmation must match"
 msgstr "Le mot de passe et sa confirmation doivent correspondre"
 
@@ -603,24 +611,33 @@ msgid "Plan is already shared with %{email}."
 msgstr "Le plan est déjà partagé avec %{email}."
 
 #: ../../app/controllers/roles_controller.rb:34
+#: ../../app/views/shared/_create_account_form.html.erb:4
+msgid "First Name"
+msgstr "Prénom"
+
+#: ../../app/controllers/roles_controller.rb:35
+msgid "Surname"
+msgstr "Nom de famille"
+
+#: ../../app/controllers/roles_controller.rb:38
 msgid "Invitation to %{email} issued successfully."
 msgstr "Invitation à %{email} émise avec succès."
 
-#: ../../app/controllers/roles_controller.rb:39
+#: ../../app/controllers/roles_controller.rb:43
 msgid "Plan shared with %{email}."
 msgstr "Plan partagé avec %{email}."
 
-#: ../../app/controllers/roles_controller.rb:53
+#: ../../app/controllers/roles_controller.rb:57
 msgid "You must provide a valid email address and select a permission level."
 msgstr ""
 "Vous devez fournir une adresse électronique valide et sélectionner un niveau d"
 "'autorisation."
 
-#: ../../app/controllers/roles_controller.rb:59
+#: ../../app/controllers/roles_controller.rb:63
 msgid "Please enter an email address"
 msgstr "Veuillez entrer une adresse électronique"
 
-#: ../../app/controllers/roles_controller.rb:77
+#: ../../app/controllers/roles_controller.rb:80
 msgid ""
 "Successfully changed the permissions for #{@role.user.email}. They have been n"
 "otified via email."
@@ -628,15 +645,15 @@ msgstr ""
 "Modification réussie des autorisations pour #{@role.user.email}. Ils ont été n"
 "otifiés par email."
 
-#: ../../app/controllers/roles_controller.rb:91
+#: ../../app/controllers/roles_controller.rb:94
 msgid "Access removed"
 msgstr "Accès retiré"
 
-#: ../../app/controllers/roles_controller.rb:110
+#: ../../app/controllers/roles_controller.rb:107
 msgid "Plan removed"
 msgstr "Plan supprimé"
 
-#: ../../app/controllers/roles_controller.rb:112
+#: ../../app/controllers/roles_controller.rb:109
 msgid "Unable to remove the plan"
 msgstr "Impossible de supprimer le plan"
 
@@ -682,7 +699,7 @@ msgstr "Impossible de changer l'affiliation de votre organisme pour le moment."
 msgid "Unknown organisation."
 msgstr "Organisme inconnue."
 
-#: ../../app/controllers/super_admin/orgs_controller.rb:64
+#: ../../app/controllers/super_admin/orgs_controller.rb:66
 msgid "There seems to be a problem with your logo. Please upload it again."
 msgstr "Il y a un problème avec votre logo. Veuillez le télécharger à nouveau."
 
@@ -798,6 +815,38 @@ msgstr ""
 msgid "#{text}"
 msgstr "#{text}"
 
+#: ../../app/helpers/mailer_helper.rb:20
+msgid "reviewer"
+msgstr "reviewer"
+
+#: ../../app/helpers/mailer_helper.rb:21
+msgid "read the plan and provide feedback."
+msgstr "lire le plan et fournir une assistance conseil."
+
+#: ../../app/helpers/mailer_helper.rb:26
+msgid "co-owner"
+msgstr "Copropriétaire"
+
+#: ../../app/helpers/mailer_helper.rb:27 ../../app/helpers/mailer_helper.rb:33
+msgid "write and edit the plan in a collaborative manner."
+msgstr "rédiger et modifier le plan de manière collaborative."
+
+#: ../../app/helpers/mailer_helper.rb:28
+msgid "You can also grant rights to other collaborators."
+msgstr "Vous pouvez également accorder des droits à d'autres collaborateurs."
+
+#: ../../app/helpers/mailer_helper.rb:32
+msgid "editor"
+msgstr "Editeur"
+
+#: ../../app/helpers/mailer_helper.rb:38
+msgid "read-only"
+msgstr "lecture seule"
+
+#: ../../app/helpers/mailer_helper.rb:39
+msgid "read the plan and leave comments."
+msgstr "lire le plan et ajouter des commentaires."
+
 #: ../../app/helpers/orgs_helper.rb:14
 msgid ""
 "SAMPLE MESSAGE: A data librarian from %{org_name} will respond to your request"
@@ -853,32 +902,31 @@ msgstr "Droit API pour les organismes"
 #: ../../app/views/paginable/plans/_org_admin.html.erb:8
 #: ../../app/views/paginable/plans/_organisationally_or_publicly_visible.html.erb:16
 #: ../../app/views/paginable/plans/_publicly_visible.html.erb:8
-#: ../../app/views/plans/_share_form.html.erb:52
 msgid "Owner"
 msgstr "Propriétaire"
 
-#: ../../app/helpers/plans_helper.rb:11
+#: ../../app/helpers/plans_helper.rb:8
 msgid "Co-owner"
 msgstr "Copropriétaire"
 
-#: ../../app/helpers/plans_helper.rb:13
+#: ../../app/helpers/plans_helper.rb:10
 msgid "Editor"
 msgstr "Éditeur"
 
-#: ../../app/helpers/plans_helper.rb:15
+#: ../../app/helpers/plans_helper.rb:12
 msgid "Read only"
 msgstr "Lecture seule"
 
-#: ../../app/helpers/plans_helper.rb:38
+#: ../../app/helpers/plans_helper.rb:33
 msgid "Organisation: anyone at my organisation can view."
 msgstr "Organisme : toute personne de mon organisme peut consulter mon plan."
 
-#: ../../app/helpers/plans_helper.rb:40
+#: ../../app/helpers/plans_helper.rb:35
 msgid "Public: anyone can view."
 msgstr "Public : visible par tous."
 
-#: ../../app/helpers/plans_helper.rb:42
-#: ../../app/views/layouts/application.html.erb:94
+#: ../../app/helpers/plans_helper.rb:37
+#: ../../app/views/layouts/application.html.erb:93
 msgid "Private: restricted to me and people I invite."
 msgstr "Privé : accès restreint aux personnes que j'invite."
 
@@ -938,37 +986,37 @@ msgstr "Votre ORCID"
 msgid "Unknown column name."
 msgstr "Nom de colonne inconnu."
 
-#: ../../app/mailers/user_mailer.rb:12
+#: ../../app/mailers/user_mailer.rb:14
 msgid "Welcome to %{tool_name}"
 msgstr "Bienvenue sur %{tool_name}"
 
-#: ../../app/mailers/user_mailer.rb:20
+#: ../../app/mailers/user_mailer.rb:22
 msgid "A Data Management Plan in %{tool_name} has been shared "
 msgstr "Un plan de gestion des données dans %{tool_name} a été partagé"
 
-#: ../../app/mailers/user_mailer.rb:35
+#: ../../app/mailers/user_mailer.rb:37
 msgid "Changed permissions on a Data Management Plan in %{tool_name}"
 msgstr "Modification des autorisations sur un plan de %{tool_name}"
 
-#: ../../app/mailers/user_mailer.rb:62
+#: ../../app/mailers/user_mailer.rb:64
 msgid "%{application_name}: %{user_name} requested feedback on a plan"
 msgstr ""
 "%{application_name} : %{user_name} a demandé de l'assistance conseil pour un p"
 "lan."
 
-#: ../../app/mailers/user_mailer.rb:75
+#: ../../app/mailers/user_mailer.rb:78
 msgid "%{application_name}: Expert feedback has been provided for %{plan_title}"
 msgstr "%{application_name} : Une assistance conseil a été fournie pour %{plan_title}"
 
-#: ../../app/mailers/user_mailer.rb:106
+#: ../../app/mailers/user_mailer.rb:109
 msgid "DMP Visibility Changed: %{plan_title}"
 msgstr "Changement de visibilité d'un plan : %{plan_title}"
 
-#: ../../app/mailers/user_mailer.rb:121
+#: ../../app/mailers/user_mailer.rb:124
 msgid "%{tool_name}: A new comment was added to %{plan_title}"
 msgstr "%{tool_name}: Un nouveau commentaire a été ajouté à %{plan_title}"
 
-#: ../../app/mailers/user_mailer.rb:132
+#: ../../app/mailers/user_mailer.rb:135
 msgid "Administrator privileges granted in %{tool_name}"
 msgstr "Droits administrateur attribués dans %{tool_name}"
 
@@ -1011,8 +1059,8 @@ msgstr "%{affiliation}"
 
 #: ../../app/models/concerns/exportable_plan.rb:123
 #: ../../app/models/concerns/exportable_plan.rb:125
+#: ../../app/views/shared/export/_plan_coversheet.erb:13
 #: ../../app/views/shared/export/_plan_coversheet.erb:15
-#: ../../app/views/shared/export/_plan_coversheet.erb:17
 #: ../../app/views/shared/export/_plan_txt.erb:7
 #: ../../app/views/shared/export/_plan_txt.erb:9
 msgid "Template: "
@@ -1027,7 +1075,7 @@ msgid "%{template}"
 msgstr "%{template}"
 
 #: ../../app/models/concerns/exportable_plan.rb:128
-#: ../../app/views/shared/export/_plan_coversheet.erb:25
+#: ../../app/views/shared/export/_plan_coversheet.erb:23
 #: ../../app/views/shared/export/_plan_txt.erb:12
 msgid "Grant number: "
 msgstr "Numéro de subvention : "
@@ -1037,7 +1085,7 @@ msgid "%{grant_number}"
 msgstr "%{grant_number}"
 
 #: ../../app/models/concerns/exportable_plan.rb:131
-#: ../../app/views/shared/export/_plan_coversheet.erb:29
+#: ../../app/views/shared/export/_plan_coversheet.erb:27
 #: ../../app/views/shared/export/_plan_txt.erb:15
 msgid "Project abstract: "
 msgstr "Résumé du projet : "
@@ -1047,7 +1095,7 @@ msgid "%{description}"
 msgstr "%{description}"
 
 #: ../../app/models/concerns/exportable_plan.rb:134
-#: ../../app/views/shared/export/_plan_coversheet.erb:33
+#: ../../app/views/shared/export/_plan_coversheet.erb:31
 #: ../../app/views/shared/export/_plan_txt.erb:18
 msgid "Last modified: "
 msgstr "Dernière modification : "
@@ -1057,7 +1105,7 @@ msgid "%{date}"
 msgstr "%{date}"
 
 #: ../../app/models/concerns/exportable_plan.rb:135
-#: ../../app/views/shared/export/_plan_coversheet.erb:36
+#: ../../app/views/shared/export/_plan_coversheet.erb:34
 #: ../../app/views/shared/export/_plan_txt.erb:19
 msgid "Copyright information:"
 msgstr "Droits d'auteur"
@@ -1091,18 +1139,26 @@ msgstr ""
 msgid "Not Answered"
 msgstr "Non répondues"
 
-#: ../../app/models/concerns/validation_messages.rb:4
+#: ../../app/models/concerns/validation_messages.rb:5
 #: ../../app/models/template.rb:202
 msgid "can't be blank"
 msgstr "ne peut être vide"
 
-#: ../../app/models/concerns/validation_messages.rb:6
+#: ../../app/models/concerns/validation_messages.rb:7
 msgid "must be unique"
 msgstr "doit être unique"
 
-#: ../../app/models/concerns/validation_messages.rb:8
+#: ../../app/models/concerns/validation_messages.rb:9
 msgid "isn't a valid value"
 msgstr "n'est pas une valeur valide"
+
+#: ../../app/models/concerns/validation_messages.rb:11
+msgid "You must have at least one option with accompanying text."
+msgstr "Vous devez avoir au moins une option avec un texte d'accompagnement."
+
+#: ../../app/models/concerns/validation_messages.rb:13
+msgid "for 'Question text' can't be blank."
+msgstr "pour 'Texte de la question' ne peut pas être vide."
 
 #: ../../app/models/exported_plan.rb:111 ../../app/models/exported_plan.rb:113
 msgid "Selected option(s)"
@@ -1125,7 +1181,7 @@ msgid "-"
 msgstr "-"
 
 #: ../../app/models/exported_plan.rb:180
-#: ../../app/views/shared/export/_plan.erb:44
+#: ../../app/views/shared/export/_plan.erb:50
 msgid "Question not answered."
 msgstr "Question sans réponse."
 
@@ -1153,43 +1209,11 @@ msgstr "test"
 msgid "private"
 msgstr "privé"
 
-#: ../../app/models/question.rb:141
+#: ../../app/models/question.rb:142
 msgid "guidance on"
 msgstr "recommandation concernant"
 
-#: ../../app/models/role.rb:41
-msgid "reviewer"
-msgstr "reviewer"
-
-#: ../../app/models/role.rb:42
-msgid "read the plan and provide feedback."
-msgstr "lire le plan et fournir une assistance conseil."
-
-#: ../../app/models/role.rb:46
-msgid "co-owner"
-msgstr "Copropriétaire"
-
-#: ../../app/models/role.rb:47 ../../app/models/role.rb:52
-msgid "write and edit the plan in a collaborative manner."
-msgstr "rédiger et modifier le plan de manière collaborative."
-
-#: ../../app/models/role.rb:48
-msgid "You can also grant rights to other collaborators."
-msgstr "Vous pouvez également accorder des droits à d'autres collaborateurs."
-
-#: ../../app/models/role.rb:51
-msgid "editor"
-msgstr "Editeur"
-
-#: ../../app/models/role.rb:56
-msgid "read-only"
-msgstr "lecture seule"
-
-#: ../../app/models/role.rb:57
-msgid "read the plan and leave comments."
-msgstr "lire le plan et ajouter des commentaires."
-
-#: ../../app/models/role.rb:93
+#: ../../app/models/role.rb:61
 msgid "can't be less than zero"
 msgstr "ne peut être inférieur à zéro"
 
@@ -1368,7 +1392,7 @@ msgstr "Merci de patienter, les standards sont en cours de chargement"
 #: ../../app/views/orgs/_feedback_form.html.erb:30
 #: ../../app/views/orgs/_profile_form.html.erb:123
 #: ../../app/views/plans/_edit_details.html.erb:150
-#: ../../app/views/plans/_edit_details.html.erb:169
+#: ../../app/views/plans/_edit_details.html.erb:173
 #: ../../app/views/questions/_preview_question.html.erb:111
 #: ../../app/views/super_admin/notifications/_form.html.erb:57
 #: ../../app/views/super_admin/themes/_form.html.erb:13
@@ -1420,7 +1444,7 @@ msgstr "Prénom"
 #: ../../app/views/paginable/users/_index.html.erb:9
 #: ../../app/views/plans/_edit_details.html.erb:86
 #: ../../app/views/plans/_edit_details.html.erb:129
-#: ../../app/views/plans/_share_form.html.erb:85
+#: ../../app/views/plans/_share_form.html.erb:93
 #: ../../app/views/plans/_show_details.html.erb:20
 #: ../../app/views/plans/_show_details.html.erb:30
 #: ../../app/views/shared/_create_account_form.html.erb:12
@@ -1443,7 +1467,7 @@ msgid "Security check"
 msgstr "Vérifications de sécurité"
 
 #: ../../app/views/contact_us/contacts/_new_left.html.erb:41
-#: ../../app/views/plans/_share_form.html.erb:112
+#: ../../app/views/plans/_share_form.html.erb:120
 msgid "Submit"
 msgstr "Envoyer"
 
@@ -1478,21 +1502,33 @@ msgstr ""
 "Vous devrez créer un compte afin d'accepter l'invitation à consulter le plan ("
 "DMP)."
 
-#: ../../app/views/devise/invitations/edit.html.erb:16
+#: ../../app/views/devise/invitations/edit.html.erb:15
 #: ../../app/views/devise/passwords/edit.html.erb:15
 #: ../../app/views/devise/registrations/_password_details.html.erb:13
 msgid "New password"
 msgstr "Nouveau mot de passe"
 
-#: ../../app/views/devise/invitations/edit.html.erb:20
+#: ../../app/views/devise/invitations/edit.html.erb:19
 #: ../../app/views/devise/passwords/edit.html.erb:19
 #: ../../app/views/devise/registrations/_password_details.html.erb:18
 msgid "Password confirmation"
 msgstr "Confirmation du mot de passe"
 
-#: ../../app/views/devise/invitations/edit.html.erb:24
-#: ../../app/views/devise/registrations/new.html.erb:18
-#: ../../app/views/devise/registrations/new.html.erb:25
+#: ../../app/views/devise/invitations/edit.html.erb:23
+#: ../../app/views/devise/registrations/_personal_details.html.erb:16
+#: ../../app/views/super_admin/users/edit.html.erb:20
+msgid "First name"
+msgstr "Prénom"
+
+#: ../../app/views/devise/invitations/edit.html.erb:27
+#: ../../app/views/devise/registrations/_personal_details.html.erb:21
+#: ../../app/views/super_admin/users/edit.html.erb:25
+msgid "Last name"
+msgstr "Nom"
+
+#: ../../app/views/devise/invitations/edit.html.erb:33
+#: ../../app/views/devise/registrations/new.html.erb:37
+#: ../../app/views/devise/registrations/new.html.erb:52
 #: ../../app/views/shared/_access_controls.html.erb:11
 #: ../../app/views/shared/_create_account_form.html.erb:42
 msgid "Create account"
@@ -1525,22 +1561,19 @@ msgstr "dans votre navigateur"
 msgid "Query or feedback related to %{tool_name}"
 msgstr "Requête ou suggestion liée à %{tool_name}"
 
-#: ../../app/views/devise/mailer/invitation_instructions.html.erb:10
-#: ../../app/views/devise/mailer/reset_password_instructions.html.erb:9
-#: ../../app/views/user_mailer/sharing_notification.html.erb:8
-msgid "Hello %{user_email}"
-msgstr "Bonjour %{user_email}"
+#: ../../app/views/devise/mailer/invitation_instructions.html.erb:12
+#: ../../app/views/user_mailer/admin_privileges.html.erb:8
+#: ../../app/views/user_mailer/new_comment.html.erb:9
+#: ../../app/views/user_mailer/sharing_notification.html.erb:9
+msgid "Hello %{user_name}"
+msgstr "Bonjour %{user_name}"
 
-#: ../../app/views/devise/mailer/invitation_instructions.html.erb:13
-msgid ""
-"A colleague has invited you to contribute to their Data Management Plan in %{t"
-"ool_name}"
-msgstr ""
-"Un collègue vous a invité à contribuer à son plan de gestion de données sur %{"
-"tool_name}"
+#: ../../app/views/devise/mailer/invitation_instructions.html.erb:15
+msgid "Your colleague %{inviter_name} has invited you to contribute to "
+msgstr "Votre collègue %{inviter_name} vous a invité à contribuer à"
 
-#: ../../app/views/devise/mailer/invitation_instructions.html.erb:16
-#: ../../app/views/user_mailer/sharing_notification.html.erb:18
+#: ../../app/views/devise/mailer/invitation_instructions.html.erb:22
+#: ../../app/views/user_mailer/sharing_notification.html.erb:19
 msgid ""
 "%{click_here} to accept the invitation, (or copy %{link} into your browser). I"
 "f you don't want to accept the invitation, please ignore this email."
@@ -1548,41 +1581,43 @@ msgstr ""
 "%{click_here} pour accepter l'invitation, (ou copier %{link} dans votre naviga"
 "teur). Si vous ne souhaitez pas accepter cette invitation, ignorez ce message."
 
-#: ../../app/views/devise/mailer/invitation_instructions.html.erb:17
-#: ../../app/views/user_mailer/sharing_notification.html.erb:18
+#: ../../app/views/devise/mailer/invitation_instructions.html.erb:23
+#: ../../app/views/user_mailer/sharing_notification.html.erb:19
 msgid "Click here"
 msgstr "Cliquez ici"
 
-#: ../../app/views/devise/mailer/invitation_instructions.html.erb:21
+#: ../../app/views/devise/mailer/invitation_instructions.html.erb:27
 #: ../../app/views/devise/mailer/reset_password_instructions.html.erb:17
 #: ../../app/views/user_mailer/_email_signature.html.erb:12
 #: ../../app/views/user_mailer/welcome_notification.html.erb:19
 msgid "All the best"
 msgstr "Cordialement"
 
-#: ../../app/views/devise/mailer/invitation_instructions.html.erb:23
+#: ../../app/views/devise/mailer/invitation_instructions.html.erb:29
 #: ../../app/views/devise/mailer/reset_password_instructions.html.erb:19
 #: ../../app/views/user_mailer/_email_signature.html.erb:14
 #: ../../app/views/user_mailer/welcome_notification.html.erb:21
 msgid "The %{tool_name} team"
 msgstr "L'équipe %{tool_name}"
 
-#: ../../app/views/devise/mailer/invitation_instructions.html.erb:26
+#: ../../app/views/devise/mailer/invitation_instructions.html.erb:32
 #: ../../app/views/devise/mailer/reset_password_instructions.html.erb:22
 #: ../../app/views/user_mailer/_email_signature.html.erb:20
 #: ../../app/views/user_mailer/welcome_notification.html.erb:24
 msgid "Please do not reply to this email."
 msgstr "Merci de ne pas répondre à ce mail."
 
-#: ../../app/views/devise/mailer/invitation_instructions.html.erb:27
-#: ../../app/views/devise/mailer/reset_password_instructions.html.erb:22
-#: ../../app/views/user_mailer/_email_signature.html.erb:21
+#: ../../app/views/devise/mailer/invitation_instructions.html.erb:33
 msgid ""
 "If you have any questions or need help, please contact us at %{helpdesk_email}"
-" or visit %{contact_us}"
+" or visit %{contact_us_url}"
 msgstr ""
-"Si vous avez des questions ou si vous avez besoin d'aide, merci de nous contac"
-"ter à %{helpdesk_email} ou consulter %{contact_us}"
+"Si vous avez des questions ou avez besoin d’aide, veuillez nous contacter à l’"
+"adresse %{helpdesk_email} ou visiter le site %{contact_us_url}."
+
+#: ../../app/views/devise/mailer/reset_password_instructions.html.erb:9
+msgid "Hello %{user_email}"
+msgstr "Bonjour %{user_email}"
 
 #: ../../app/views/devise/mailer/reset_password_instructions.html.erb:12
 msgid ""
@@ -1599,6 +1634,15 @@ msgstr "Modifier mon mot de passe"
 #: ../../app/views/devise/mailer/reset_password_instructions.html.erb:15
 msgid "If you didn't request this, please ignore this email."
 msgstr "Si vous n'avez pas fait cette demande, merci d'ignorer ce message."
+
+#: ../../app/views/devise/mailer/reset_password_instructions.html.erb:22
+#: ../../app/views/user_mailer/_email_signature.html.erb:21
+msgid ""
+"If you have any questions or need help, please contact us at %{helpdesk_email}"
+" or visit %{contact_us}"
+msgstr ""
+"Si vous avez des questions ou si vous avez besoin d'aide, merci de nous contac"
+"ter à %{helpdesk_email} ou consulter %{contact_us}"
 
 #: ../../app/views/devise/mailer/unlock_instructions.html.erb:2
 msgid "Hello"
@@ -1785,16 +1829,6 @@ msgstr ""
 msgid "You can edit any of the details below."
 msgstr "Vous pouvez modifier les renseignements ci-dessous."
 
-#: ../../app/views/devise/registrations/_personal_details.html.erb:16
-#: ../../app/views/super_admin/users/edit.html.erb:20
-msgid "First name"
-msgstr "Prénom"
-
-#: ../../app/views/devise/registrations/_personal_details.html.erb:21
-#: ../../app/views/super_admin/users/edit.html.erb:25
-msgid "Last name"
-msgstr "Nom"
-
 #: ../../app/views/devise/registrations/_personal_details.html.erb:36
 #: ../../app/views/layouts/_signin_signout.html.erb:6
 #: ../../app/views/super_admin/users/edit.html.erb:41
@@ -1841,11 +1875,11 @@ msgstr "Renseignements"
 msgid "Notification Preferences"
 msgstr "Préférences des notifications"
 
-#: ../../app/views/devise/registrations/new.html.erb:6
+#: ../../app/views/devise/registrations/new.html.erb:9
 msgid "Do you have a %{application_name} account?"
 msgstr "Avez vous un compte sur %{application_name} ?"
 
-#: ../../app/views/devise/registrations/new.html.erb:9
+#: ../../app/views/devise/registrations/new.html.erb:16
 #: ../../app/views/layouts/_navigation.html.erb:64
 #: ../../app/views/layouts/_signin_signout.html.erb:41
 #: ../../app/views/shared/_access_controls.html.erb:5
@@ -1853,15 +1887,15 @@ msgstr "Avez vous un compte sur %{application_name} ?"
 msgid "Sign in"
 msgstr "Connexion"
 
-#: ../../app/views/devise/registrations/new.html.erb:11
+#: ../../app/views/devise/registrations/new.html.erb:19
 msgid "This will link your existing account to your credentials."
 msgstr "Votre compte existant sera lié à votre compte institutionnel."
 
-#: ../../app/views/devise/registrations/new.html.erb:15
+#: ../../app/views/devise/registrations/new.html.erb:28
 msgid "No %{application_name} account?"
 msgstr "Pas de compte %{application_name} ?"
 
-#: ../../app/views/devise/registrations/new.html.erb:20
+#: ../../app/views/devise/registrations/new.html.erb:40
 msgid "This will create an account and link it to your credentials."
 msgstr "Cela permettra de créer un compte et de le lier à votre compte institutionnel."
 
@@ -1991,8 +2025,8 @@ msgstr " (par ex. : Ecole/Département) "
 #: ../../app/views/notes/_edit.html.erb:10
 #: ../../app/views/org_admin/questions/_form.html.erb:88
 #: ../../app/views/org_admin/questions/_form.html.erb:90
-#: ../../app/views/plans/_edit_details.html.erb:177
-#: ../../app/views/plans/new.html.erb:108
+#: ../../app/views/plans/_edit_details.html.erb:186
+#: ../../app/views/plans/new.html.erb:111
 #: ../../app/views/super_admin/notifications/_form.html.erb:64
 #: ../../app/views/super_admin/themes/_form.html.erb:19
 #: ../../app/views/users/_admin_grant_permissions.html.erb:65
@@ -2284,50 +2318,50 @@ msgstr "Déconnexion"
 msgid "%{application_name}"
 msgstr "%{application_name}"
 
-#: ../../app/views/layouts/application.html.erb:65
+#: ../../app/views/layouts/application.html.erb:64
 msgid "Error:"
 msgstr "Erreur :"
 
-#: ../../app/views/layouts/application.html.erb:65
+#: ../../app/views/layouts/application.html.erb:64
 msgid "Notice:"
 msgstr "Note :"
 
-#: ../../app/views/layouts/application.html.erb:86
+#: ../../app/views/layouts/application.html.erb:85
 #: ../../app/views/plans/new.html.erb:16
 msgid "This field is required."
 msgstr "Ce champ est obligatoire."
 
-#: ../../app/views/layouts/application.html.erb:88
+#: ../../app/views/layouts/application.html.erb:87
 #: ../../app/views/shared/_create_account_form.html.erb:29
 msgid "Show password"
 msgstr "Afficher le mot de passe"
 
-#: ../../app/views/layouts/application.html.erb:89
+#: ../../app/views/layouts/application.html.erb:88
 msgid "Select an organisation from the list."
 msgstr "Sélectionner un organisme dans la liste."
 
-#: ../../app/views/layouts/application.html.erb:90
+#: ../../app/views/layouts/application.html.erb:89
 msgid "My organisation isn't listed"
 msgstr "Mon organisme n'est pas dans la liste"
 
-#: ../../app/views/layouts/application.html.erb:92
+#: ../../app/views/layouts/application.html.erb:91
 #: ../../app/views/paginable/plans/_privately_visible.html.erb:38
 msgid "N/A"
 msgstr "N/D"
 
-#: ../../app/views/layouts/application.html.erb:93
+#: ../../app/views/layouts/application.html.erb:92
 msgid "Private"
 msgstr "Privé"
 
-#: ../../app/views/layouts/application.html.erb:96
+#: ../../app/views/layouts/application.html.erb:95
 msgid "Hide list."
 msgstr "Cacher la liste."
 
-#: ../../app/views/layouts/application.html.erb:97
+#: ../../app/views/layouts/application.html.erb:96
 msgid "See the full list of partner institutions."
 msgstr "Voir la liste des institutions partenaires."
 
-#: ../../app/views/layouts/application.html.erb:99
+#: ../../app/views/layouts/application.html.erb:98
 msgid ""
 "Unable to find a suitable template for the research organisation and funder yo"
 "u selected."
@@ -2335,21 +2369,21 @@ msgstr ""
 "Impossible de trouver un modèle approprié à l'organisme de recherche et au fin"
 "anceur que vous avez sélectionnés."
 
-#: ../../app/views/layouts/application.html.erb:100
+#: ../../app/views/layouts/application.html.erb:99
 msgid "Please select a research organisation and funder to continue."
 msgstr ""
 "Veuillez sélectionner un organisme de recherche et un financeur pour continuer"
 "."
 
-#: ../../app/views/layouts/application.html.erb:102
+#: ../../app/views/layouts/application.html.erb:101
 msgid "Loading ..."
 msgstr "Chargement ..."
 
-#: ../../app/views/layouts/application.html.erb:103
+#: ../../app/views/layouts/application.html.erb:102
 msgid "Unable to load the section's content at this time."
 msgstr "Impossible de charger le contenu de la section pour le moment."
 
-#: ../../app/views/layouts/application.html.erb:104
+#: ../../app/views/layouts/application.html.erb:103
 msgid "Unable to load the question's content at this time."
 msgstr "Impossible de charger le contenu de la question pour le moment."
 
@@ -2360,14 +2394,14 @@ msgstr "Voulez-vous vraiment retirer ce commentaire ?"
 #: ../../app/views/notes/_archive.html.erb:10
 #: ../../app/views/notes/_list.html.erb:16
 #: ../../app/views/notes/_list.html.erb:19
-#: ../../app/views/org_admin/question_options/_option_fields.html.erb:34
+#: ../../app/views/org_admin/question_options/_option_fields.html.erb:38
 #: ../../app/views/paginable/guidance_groups/_index.html.erb:49
 #: ../../app/views/paginable/guidances/_index.html.erb:60
 #: ../../app/views/paginable/orgs/_index.html.erb:33
 #: ../../app/views/paginable/plans/_privately_visible.html.erb:74
 #: ../../app/views/paginable/templates/_customisable.html.erb:75
 #: ../../app/views/paginable/templates/_organisational.html.erb:72
-#: ../../app/views/plans/_share_form.html.erb:68
+#: ../../app/views/plans/_share_form.html.erb:76
 msgid "Remove"
 msgstr "Supprimer"
 
@@ -2580,7 +2614,7 @@ msgstr "Type"
 #: ../../app/views/paginable/templates/_customisable.html.erb:51
 #: ../../app/views/paginable/templates/_history.html.erb:9
 #: ../../app/views/paginable/templates/_organisational.html.erb:51
-#: ../../app/views/plans/_share_form.html.erb:42
+#: ../../app/views/plans/_share_form.html.erb:46
 msgid "Actions"
 msgstr "Actions"
 
@@ -2616,7 +2650,7 @@ msgstr "Texte"
 msgid "Default"
 msgstr "Par défaut"
 
-#: ../../app/views/org_admin/question_options/_option_fields.html.erb:41
+#: ../../app/views/org_admin/question_options/_option_fields.html.erb:45
 msgid "Add option"
 msgstr "Ajoutez une option"
 
@@ -3043,7 +3077,7 @@ msgstr "Supprimer le logo"
 
 #: ../../app/views/orgs/_profile_form.html.erb:28
 #: ../../app/views/orgs/shibboleth_ds.html.erb:34
-#: ../../app/views/plans/new.html.erb:51 ../../app/views/plans/new.html.erb:77
+#: ../../app/views/plans/new.html.erb:53 ../../app/views/plans/new.html.erb:80
 #: ../../app/views/shared/_sign_in_form.html.erb:23
 msgid "or"
 msgstr "ou"
@@ -3123,7 +3157,7 @@ msgid "Profile information"
 msgstr "Informations du profil"
 
 #: ../../app/views/orgs/admin_edit.html.erb:19
-#: ../../app/views/plans/_share_form.html.erb:128
+#: ../../app/views/plans/_share_form.html.erb:136
 #: ../../app/views/static_pages/help.html.erb:45
 msgid "Request feedback"
 msgstr "Demande d'assistance conseil"
@@ -3275,9 +3309,12 @@ msgid "Unknown"
 msgstr "Inconnu"
 
 #:
-#: ../../app/views/paginable/plans/_organisationally_or_publicly_visible.html.erb:34
-msgid "PDF"
-msgstr "PDF"
+#: ../../app/views/paginable/plans/_organisationally_or_publicly_visible.html.erb:37
+#: ../../app/views/paginable/plans/_publicly_visible.html.erb:23
+#: ../../app/views/paginable/templates/_publicly_visible.html.erb:20
+#: ../../app/views/paginable/templates/_publicly_visible.html.erb:24
+msgid "(new window)"
+msgstr "(nouvelle fenetre)"
 
 #: ../../app/views/paginable/plans/_privately_visible.html.erb:7
 msgid "Edited"
@@ -3293,7 +3330,7 @@ msgstr "Partagé"
 
 #: ../../app/views/paginable/plans/_privately_visible.html.erb:31
 #: ../../app/views/paginable/users/_index.html.erb:55
-#: ../../app/views/plans/_share_form.html.erb:27
+#: ../../app/views/plans/_share_form.html.erb:31
 msgid "Update"
 msgstr "Mettre à jour"
 
@@ -3330,11 +3367,6 @@ msgstr ""
 #: ../../app/views/paginable/plans/_publicly_visible.html.erb:17
 msgid "Not Applicable"
 msgstr "Non applicable"
-
-#: ../../app/views/paginable/plans/_publicly_visible.html.erb:20
-#: ../../app/views/paginable/templates/_publicly_visible.html.erb:19
-msgid "PDF <em class=\"sr-only\">(new window)</em>"
-msgstr "PDF <em class=\"sr-only\">(nouvelle fenêtre)</em>"
 
 #: ../../app/views/paginable/templates/_customisable.html.erb:6
 #: ../../app/views/paginable/templates/_index.html.erb:5
@@ -3439,10 +3471,6 @@ msgstr "Exemples de plans"
 #: ../../app/views/paginable/templates/_publicly_visible.html.erb:10
 msgid "(if available)"
 msgstr "(si disponible)"
-
-#: ../../app/views/paginable/templates/_publicly_visible.html.erb:18
-msgid "DOCX <em class=\"sr-only\">(new window)</em>"
-msgstr "DOCX <em class=\"sr-only\">(nouvelle fenêtre)</em>"
 
 #: ../../app/views/paginable/users/_index.html.erb:11
 msgid "Created date"
@@ -3555,7 +3583,7 @@ msgstr ""
 "ande de subvention."
 
 #: ../../app/views/plans/_edit_details.html.erb:15
-#: ../../app/views/plans/new.html.erb:28
+#: ../../app/views/plans/new.html.erb:29
 msgid "mock project for testing, practice, or educational purposes"
 msgstr "projet de test, d'entrainement ou à des fins de formation"
 
@@ -3611,11 +3639,11 @@ msgid "Same as Principal Investigator"
 msgstr "Identique au Chercheur Principal"
 
 #: ../../app/views/plans/_edit_details.html.erb:153
-#: ../../app/views/plans/_edit_details.html.erb:180
+#: ../../app/views/plans/_edit_details.html.erb:189
 msgid "Select Guidance"
 msgstr "Sélectionnez le guidage"
 
-#: ../../app/views/plans/_edit_details.html.erb:154
+#: ../../app/views/plans/_edit_details.html.erb:156
 msgid ""
 "To help you write your plan, %{application_name} can show you guidance from a "
 "variety of organisations."
@@ -3623,19 +3651,23 @@ msgstr ""
 "Pour vous aider à rédiger votre plan, %{application_name} peut vous proposer d"
 "es recommandations provenant de différents organismes."
 
-#: ../../app/views/plans/_edit_details.html.erb:158
+#: ../../app/views/plans/_edit_details.html.erb:160
 msgid "Select up to 6 organisations to see their guidance."
 msgstr "Choisissez jusqu'à 6 organismes pour voir leurs recommendations."
 
-#: ../../app/views/plans/_edit_details.html.erb:165
+#: ../../app/views/plans/_edit_details.html.erb:169
 msgid "Find guidance from additional organisations below"
 msgstr "Trouver les recommandations d'autres organismes ci-dessous"
 
-#: ../../app/views/plans/_edit_details.html.erb:166
+#: ../../app/views/plans/_edit_details.html.erb:170
 msgid "See the full list"
 msgstr "Voir la liste complète"
 
-#: ../../app/views/plans/_edit_details.html.erb:182
+#: ../../app/views/plans/_edit_details.html.erb:176
+msgid "There is no additional guidance for this template."
+msgstr "Il n'y a aucune indication supplémentaire pour ce modèle."
+
+#: ../../app/views/plans/_edit_details.html.erb:191
 msgid ""
 "To help you write your plan, %{application_name} can show you guidance from a "
 "variety of organisations. Please choose up to 6 organisations of the following"
@@ -3646,7 +3678,7 @@ msgstr ""
 "s, choisissez jusqu'à 6 organismes proposant des recommandations adaptées à vo"
 "tre plan."
 
-#: ../../app/views/plans/_edit_details.html.erb:185
+#: ../../app/views/plans/_edit_details.html.erb:194
 msgid "Don't forget to save your changes after making your selections."
 msgstr "N'oubliez pas de sauvegarder vos changements après avoir fait vos sélections"
 
@@ -3684,11 +3716,11 @@ msgid_plural "questions"
 msgstr[0] "question"
 msgstr[1] "des questions"
 
-#: ../../app/views/plans/_share_form.html.erb:1
+#: ../../app/views/plans/_share_form.html.erb:5
 msgid "Set plan visibility"
 msgstr "Définir la visibilité du plan"
 
-#: ../../app/views/plans/_share_form.html.erb:2
+#: ../../app/views/plans/_share_form.html.erb:6
 msgid ""
 "Public or organisational visibility is intended for finished plans. You must a"
 "nswer at least %{percentage}%% of the questions to enable these options. Note:"
@@ -3699,7 +3731,7 @@ msgstr ""
 "r activer ces options. Note : les plans de test on la visibilité privé par déf"
 "ault."
 
-#: ../../app/views/plans/_share_form.html.erb:10
+#: ../../app/views/plans/_share_form.html.erb:14
 msgid ""
 "Private: visible to me, specified collaborators and administrators at my organ"
 "isation"
@@ -3707,20 +3739,20 @@ msgstr ""
 "Privé : visible par moi, les collaborateurs invités et les administrateurs de "
 "mon organisation"
 
-#: ../../app/views/plans/_share_form.html.erb:16
+#: ../../app/views/plans/_share_form.html.erb:20
 #: ../../app/views/user_mailer/plan_visibility.html.erb:18
 msgid "Organisation: anyone at my organisation can view"
 msgstr "Organisme : toute personne de mon organisme peut consulter mon plan"
 
-#: ../../app/views/plans/_share_form.html.erb:22
+#: ../../app/views/plans/_share_form.html.erb:26
 msgid "Public: anyone can view"
 msgstr "Public : visible par tous"
 
-#: ../../app/views/plans/_share_form.html.erb:32
+#: ../../app/views/plans/_share_form.html.erb:36
 msgid "Manage collaborators"
 msgstr "Gérer les collaborateurs"
 
-#: ../../app/views/plans/_share_form.html.erb:33
+#: ../../app/views/plans/_share_form.html.erb:37
 msgid ""
 "Invite specific people to read, edit, or administer your plan. Invitees will r"
 "eceive an email notification that they have access to this plan."
@@ -3729,44 +3761,44 @@ msgstr ""
 "recevront une notification par message électronique indiquant qu'ils ont accès"
 " à ce plan."
 
-#: ../../app/views/plans/_share_form.html.erb:39
+#: ../../app/views/plans/_share_form.html.erb:43
 msgid "Email address"
 msgstr "Adresse électronique"
 
-#: ../../app/views/plans/_share_form.html.erb:40
-#: ../../app/views/plans/_share_form.html.erb:91
+#: ../../app/views/plans/_share_form.html.erb:44
+#: ../../app/views/plans/_share_form.html.erb:99
 msgid "Permissions"
 msgstr "Permissions"
 
-#: ../../app/views/plans/_share_form.html.erb:68
+#: ../../app/views/plans/_share_form.html.erb:76
 msgid "Are you sure?"
 msgstr "Êtes-vous sûr ?"
 
-#: ../../app/views/plans/_share_form.html.erb:78
+#: ../../app/views/plans/_share_form.html.erb:86
 msgid "Invite collaborators"
 msgstr "Inviter des collaborateurs"
 
-#: ../../app/views/plans/_share_form.html.erb:96
+#: ../../app/views/plans/_share_form.html.erb:104
 msgid "Co-owner: can edit project details, change visibility, and add collaborators"
 msgstr ""
 "Copropriétaire : peut éditer les renseignements du projet, changer la visibili"
 "té et ajouter des collaborateurs."
 
-#: ../../app/views/plans/_share_form.html.erb:102
+#: ../../app/views/plans/_share_form.html.erb:110
 msgid "Editor: can comment and make changes"
 msgstr "Editeur : peut commenter et effectuer des changements"
 
-#: ../../app/views/plans/_share_form.html.erb:108
+#: ../../app/views/plans/_share_form.html.erb:116
 msgid "Read only: can view and comment, but not make changes"
 msgstr ""
 "Lecture seule: peut voir et commenter, mais ne peut pas effectuer de changemen"
 "ts"
 
-#: ../../app/views/plans/_share_form.html.erb:120
+#: ../../app/views/plans/_share_form.html.erb:128
 msgid "Request expert feedback"
 msgstr "Demande d'assistance conseil"
 
-#: ../../app/views/plans/_share_form.html.erb:121
+#: ../../app/views/plans/_share_form.html.erb:129
 msgid ""
 "Click below to give data management staff at your organisation access to read "
 "and comment on your plan."
@@ -3774,11 +3806,11 @@ msgstr ""
 "Cliquez ci-dessous pour permettre au service d'accompagnement de votre organis"
 "me de lire et commenter votre plan."
 
-#: ../../app/views/plans/_share_form.html.erb:125
+#: ../../app/views/plans/_share_form.html.erb:133
 msgid "You can continue to edit and download the plan in the interim."
 msgstr "Vous pouvez continuer à modifier et à télécharger le plan en attendant."
 
-#: ../../app/views/plans/_share_form.html.erb:132
+#: ../../app/views/plans/_share_form.html.erb:140
 msgid "Feedback has been requested."
 msgstr "Une assistance conseil a été demandée."
 
@@ -3817,7 +3849,7 @@ msgid "Click the 'Create plan' button below to begin."
 msgstr "Cliquez le bouton ci-dessous \"Créer un plan\" pour commencer."
 
 #: ../../app/views/plans/index.html.erb:29
-#: ../../app/views/plans/new.html.erb:107
+#: ../../app/views/plans/new.html.erb:110
 msgid "Create plan"
 msgstr "Create plan"
 
@@ -3853,31 +3885,31 @@ msgstr ""
 msgid "What research project are you planning?"
 msgstr "Quel projet de recherche planifiez-vous ?"
 
-#: ../../app/views/plans/new.html.erb:21
+#: ../../app/views/plans/new.html.erb:22
 msgid "If applying for funding, state the project title exactly as in the proposal."
 msgstr ""
 "En cas de demande de financement, indiquer le nom du projet tel qu'il apparaît"
 " dans la demande de subvention."
 
-#: ../../app/views/plans/new.html.erb:36
+#: ../../app/views/plans/new.html.erb:37
 msgid "You must select a research organisation from the list or click the checkbox."
 msgstr ""
 "Vous devez sélectionner un organisme de recherche dans la liste ou cliquer sur"
 " la case à cocher."
 
-#: ../../app/views/plans/new.html.erb:37
+#: ../../app/views/plans/new.html.erb:38
 msgid "Select the primary research organisation"
 msgstr "Choisir l'organisme de recherche principal (ou porteur du projet)"
 
-#: ../../app/views/plans/new.html.erb:48
+#: ../../app/views/plans/new.html.erb:49
 msgid "You must select a research organisation from the list."
 msgstr "Vous devez sélectionner un organisme de recherche dans la liste."
 
-#: ../../app/views/plans/new.html.erb:49
+#: ../../app/views/plans/new.html.erb:50
 msgid "Please select a valid research organisation from the list."
 msgstr "Merci de sélectionner un organisme de recherche valide de la liste."
 
-#: ../../app/views/plans/new.html.erb:54
+#: ../../app/views/plans/new.html.erb:56
 msgid ""
 "No research organisation associated with this plan or my research organisation"
 " is not listed"
@@ -3885,33 +3917,33 @@ msgstr ""
 "Aucun organisme de recherché n'est associé à ce plan ou mon organisme de reche"
 "rche n'est pas listé"
 
-#: ../../app/views/plans/new.html.erb:64
+#: ../../app/views/plans/new.html.erb:66
 msgid "You must select a funder from the list or click the checkbox."
 msgstr ""
 "You devez sélectionner un financeur dans la liste ou cliquer sur la case à coc"
 "her."
 
-#: ../../app/views/plans/new.html.erb:64
+#: ../../app/views/plans/new.html.erb:66
 msgid "Select the primary funding organisation"
 msgstr "Choisir le principal organisme de financement"
 
-#: ../../app/views/plans/new.html.erb:74
+#: ../../app/views/plans/new.html.erb:76
 msgid "You must select a funding organisation from the list."
 msgstr "Vous devez sélectionner un organisme de financement dans la liste."
 
-#: ../../app/views/plans/new.html.erb:75
+#: ../../app/views/plans/new.html.erb:77
 msgid "Please select a valid funding organisation from the list."
 msgstr "Merci de sélectionner un organisme de financement valide de la liste."
 
-#: ../../app/views/plans/new.html.erb:80
+#: ../../app/views/plans/new.html.erb:83
 msgid "No funder associated with this plan or my funder is not listed"
 msgstr "Aucun financeur n'est associé à ce plan ou mon financeur n'est pas listé"
 
-#: ../../app/views/plans/new.html.erb:92
+#: ../../app/views/plans/new.html.erb:95
 msgid "Which DMP template would you like to use?"
 msgstr "Quel modèle souhaitez vous utiliser ?"
 
-#: ../../app/views/plans/new.html.erb:100
+#: ../../app/views/plans/new.html.erb:103
 msgid "We found multiple DMP templates corresponding to your funder."
 msgstr "Nous avons trouvé plusieurs modèles correspondants à votre financeur."
 
@@ -3972,13 +4004,9 @@ msgstr "Merci de sélectionner un item de la liste."
 msgid "Begin typing to see a filtered list"
 msgstr "Commencez à saisir du texte pour afficher une liste déroulante"
 
-#: ../../app/views/shared/_accessible_combobox.html.erb:39
+#: ../../app/views/shared/_accessible_combobox.html.erb:42
 msgid "No items available."
 msgstr "Aucun enregistrement disponible."
-
-#: ../../app/views/shared/_create_account_form.html.erb:4
-msgid "First Name"
-msgstr "Prénom"
 
 #: ../../app/views/shared/_create_account_form.html.erb:8
 msgid "Last Name"
@@ -4046,20 +4074,20 @@ msgstr "Filtrer les plans"
 msgid "Remove the filter"
 msgstr "Supprimer le filtre"
 
-#: ../../app/views/shared/export/_plan_coversheet.erb:4
+#: ../../app/views/shared/export/_plan_coversheet.erb:3
 msgid "A Data Management Plan created using "
 msgstr "Plan de gestion de données créé à l'aide de "
 
-#: ../../app/views/shared/export/_plan_coversheet.erb:12
+#: ../../app/views/shared/export/_plan_coversheet.erb:10
 #: ../../app/views/shared/export/_plan_txt.erb:5
 msgid "Affiliation: "
 msgstr "Affiliation : "
 
-#: ../../app/views/shared/export/_plan_coversheet.erb:21
+#: ../../app/views/shared/export/_plan_coversheet.erb:19
 msgid "ORCID iD: "
 msgstr "Identifiant ORCID : "
 
-#: ../../app/views/shared/export/_plan_coversheet.erb:39
+#: ../../app/views/shared/export/_plan_coversheet.erb:37
 #: ../../app/views/shared/export/_plan_txt.erb:20
 msgid ""
 " The above plan creator(s) have agreed that others may use as much of the text"
@@ -4763,16 +4791,43 @@ msgstr "Nbre de plans créés au cours des 12 derniers mois"
 msgid "There is no data available for plans yet."
 msgstr "Il n'y a pas encore de données disponibles pour les plans."
 
+#: ../../app/views/usage/index.html.erb:137
+msgid "No. plans by template"
+msgstr "Nombre de plans par modèle"
+
+#: ../../app/views/usage/index.html.erb:145
+msgid "Time picker"
+msgstr "Sélecteur de temps"
+
+#: ../../app/views/usage/index.html.erb:147
+msgid "Last month"
+msgstr "Le mois dernier"
+
+#: ../../app/views/usage/index.html.erb:148
+msgid "3 months ago"
+msgstr "il y a 3 mois"
+
+#: ../../app/views/usage/index.html.erb:149
+msgid "6 months ago"
+msgstr "il y a 6 mois"
+
+#: ../../app/views/usage/index.html.erb:150
+msgid "9 months ago"
+msgstr "il y a 9 mois"
+
+#: ../../app/views/usage/index.html.erb:151
+msgid "12 months ago"
+msgstr "Il y a 12 mois"
+
+#: ../../app/views/usage/index.html.erb:158
+msgid "Download all"
+msgstr "Tout télécharger"
+
 #: ../../app/views/user_mailer/_email_signature.html.erb:18
 msgid "You may change your notification preferences on your profile page. "
 msgstr ""
 "Vous pouvez modifier vos préférences de notification sur la page de votre prof"
 "il."
-
-#: ../../app/views/user_mailer/admin_privileges.html.erb:8
-#: ../../app/views/user_mailer/new_comment.html.erb:9
-msgid "Hello %{user_name}"
-msgstr "Bonjour %{user_name}"
 
 #: ../../app/views/user_mailer/admin_privileges.html.erb:12
 msgid "You have been granted administrator privileges in %{tool_name}:"
@@ -4885,7 +4940,7 @@ msgstr ""
 "Si vous avez des questions concernant cette action, veuillez visiter la page M"
 "on tableau de bord dans %{tool_name}."
 
-#: ../../app/views/user_mailer/sharing_notification.html.erb:11
+#: ../../app/views/user_mailer/sharing_notification.html.erb:12
 msgid ""
 "Your colleague %{inviter_name} has invited you to contribute to\n"
 "            their Data Management Plan in %{tool_name}"

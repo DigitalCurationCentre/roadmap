@@ -2,7 +2,7 @@
 # IF YOU UPDATE IT, YOUR CHANGES WILL BE LOST AT THE NEXT SYNC.
 #
 # To update this file, use this translation interface:
-# https://translation.io/xsrust/dmptuuli/fi
+# https://translation.io/xsrust/roadmap/fi
 #
 ---
 fi:
@@ -200,10 +200,6 @@ fi:
       destroy:
         notice: "%{resource_name} onnistui tuhoutui."
         alert: "%{resource_name} ei tuhoutua."
-  multibyte:
-  - "\U0001F600"
-  - ð ¡
-  - â ¤
   devise:
     confirmations:
       confirmed: Kiitos tilisi vahvistamisesta! Kirjasimme sinut nyt sisään.
@@ -268,6 +264,8 @@ fi:
         uusi sähköpostiosoitteesi. Tarkista sähköpostisi ja seuraa Vahvista linkki
         Vahvista uusi sähköpostiosoitteesi.
       updated: Tilisi on päivitetty onnistuneesti.
+      updated_but_not_signed_in: Tilisi on päivitetty onnistuneesti, mutta koska salasanasi
+        on muutettu, sinun täytyy kirjautua uudelleen
     sessions:
       signed_in: Allekirjoitettu onnistuneesti.
       signed_out: Kirjautunut ulos onnistuneesti.

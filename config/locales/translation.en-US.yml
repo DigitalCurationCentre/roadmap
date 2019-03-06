@@ -209,8 +209,8 @@ en-US:
       invalid: Invalid email or password.
       locked: Your account is locked.
       last_attempt: 
-      not_found_in_database: Invalid email or password.
-      timeout: Your session expired, please sign in again to continue.
+      not_found_in_database: Invalid %{authentication_keys} or password.
+      timeout: Your session expired. Please sign in again to continue.
       unauthenticated: You need to sign in or sign up before continuing.
       unconfirmed: You have to confirm your account before continuing.
       invited: You have a pending invitation, accept it to finish creating your account.
@@ -222,15 +222,17 @@ en-US:
       unlock_instructions:
         subject: Unlock Instructions
       email_changed:
-        subject: 
+        subject: Email changed
       password_change:
         subject: 
       invitation_instructions:
         subject: Invitation instructions
         hello: 
         someone_invited_you: 
-        accept: 
-        accept_until: 
+        accept: Accept invitation
+        accept_until: 'This invitation will be due in %{due_date}.
+
+'
         ignore: 
     omniauth_callbacks:
       failure: Could not authenticate you from %{kind} because "%{reason}".
@@ -260,6 +262,7 @@ en-US:
         to verify your new email address. Please check your email and click on the
         confirm link to finalize confirming your new email address.
       updated: You updated your account successfully.
+      updated_but_not_signed_in: 
     sessions:
       signed_in: Signed in successfully.
       signed_out: Signed out successfully.
@@ -295,21 +298,21 @@ en-US:
         email: Email
         message: Message
         name: Name
-        subject: Subjecter
+        subject: Subject
         submit: Submit
       new_formtastic:
         contact_us: Contact Us
         email: Email
         message: Message
         name: Name
-        subject: Subjecter
+        subject: Subject
         submit: Submit
       new_simple_form:
         contact_us: Contact Us
         email: Email
         message: Message
         name: Name
-        subject: Subjecter
+        subject: Subject
         submit: Submit
     notices:
       error: You must enter both fields.
@@ -321,7 +324,3 @@ en-US:
       previous: "&lsaquo; Prev"
       next: Next &rsaquo;
       truncate: "&hellip;"
-  multibyte:
-  - 
-  - 
-  - 

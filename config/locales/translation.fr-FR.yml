@@ -276,6 +276,8 @@ fr-FR:
         sur le lien de confirmation pour finaliser la validation de votre nouvelle
         adresse électronique.
       updated: Votre compte a bien été modifié.
+      updated_but_not_signed_in: Votre compte a été mis à jour avec succès, mais depuis
+        la modification de votre mot de passe, vous devez vous reconnecter.
     sessions:
       signed_in: Connecté
       signed_out: Déconnecté
@@ -338,7 +340,3 @@ fr-FR:
       previous: "&lsaquo; Précédent"
       next: Suivant &rsaquo;
       truncate: "&hellip;"
-  multibyte:
-  - "\U0001F600"
-  - ðŸ~¡
-  - â € ¤

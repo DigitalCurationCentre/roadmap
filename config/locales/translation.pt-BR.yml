@@ -274,6 +274,8 @@ pt-BR:
         no link de confirmação para finalizar a confirmação do seu novo endereço de
         email.
       updated: Você atualizou sua conta com sucesso.
+      updated_but_not_signed_in: Sua conta foi atualizada com sucesso, mas, como sua
+        senha foi alterada, você precisa fazer login novamente
     sessions:
       signed_in: Conectado com sucesso.
       signed_out: Saiu com sucesso.
@@ -335,7 +337,3 @@ pt-BR:
       previous: "&lsaquo; Anterior"
       next: Próximo &rsaquo;
       truncate: "&hellip;"
-  multibyte:
-  - "\U0001F600"
-  - ðŸ˜¡
-  - "¤ ¤"

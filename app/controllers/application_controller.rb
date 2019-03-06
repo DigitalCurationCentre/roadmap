@@ -38,7 +38,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  # Sets FastGettext locale for every request made
+  # Sets locale for every request made
   def set_locale
     I18n.locale = current_locale
   end

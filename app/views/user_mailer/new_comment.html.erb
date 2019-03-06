@@ -4,7 +4,7 @@
   plan_title = @plan.title
   user_name = @plan.owner.name
 %>
-<% FastGettext.with_locale FastGettext.default_locale do %>
+<% I18n.with_locale I18n.default_locale do %>
   <p>
     <%= _('Hello %{user_name}') %{ :user_name => user_name } %>
   </p>
