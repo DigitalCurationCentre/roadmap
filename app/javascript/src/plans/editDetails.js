@@ -47,7 +47,7 @@ $(() => {
   const grantNumberInfo = (grantId) => `Grant number: ${grantId}`;
 
   const setInitialGrantProjectName = () => {
-    const grantId = grantIdHidden.val();
+    const grantId = grantIdNumber.val();
     const researchProjects = window.researchProjects;
     const researchProject = researchProjects.find((datum) => datum.grant_id === grantId);
     if (researchProject) {
