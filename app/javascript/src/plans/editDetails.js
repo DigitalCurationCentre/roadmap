@@ -11,6 +11,29 @@ $(() => {
     $('#plan_visibility').val($(e.target).is(':checked') ? 'is_test' : 'privately_visible');
   });
 
+<<<<<<< HEAD:app/javascript/src/plans/editDetails.js
+=======
+  const showHideDataContact = (el) => {
+    if ((el).is(':checked')) {
+      $('div.data-contact').fadeOut();
+    } else {
+      $('div.data-contact').fadeIn();
+    }
+  };
+
+  clearGrantNumberButton.click((e) => {
+    e.preventDefault();
+    grantIdField.val('');
+  });
+
+  $('#show_data_contact').click((e) => {
+    showHideDataContact($(e.currentTarget));
+  });
+  showHideDataContact($('#show_data_contact'));
+
+  grantIdNumber.change(() => { grantIdField.val(''); });
+
+>>>>>>> 7b3ddb0c... Fix JS lint errors:app/javascript/views/plans/edit_details.js
   // Toggle the disabled flags
   const toggleCheckboxes = (selections) => {
     $('#priority-guidance-orgs, #other-guidance-orgs').find('input[type="checkbox"]').each((i, el) => {
