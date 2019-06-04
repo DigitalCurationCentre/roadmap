@@ -94,11 +94,10 @@ $(() => {
     $('#plan_template_id option').remove();
 
     // Fetch the available templates based on the funder and research org selected
-    const qryStr = `?all=true`;
+    const qryStr = '?all=true';
     $.ajax({
-      url: `${$('#template-option-target').val()}${qryStr}`
+      url: `${$('#template-option-target').val()}${qryStr}`,
     }).done(success).fail(error);
-
   };
 
   initAutoComplete();
