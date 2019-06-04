@@ -22,6 +22,8 @@ gem 'railties'
 # A set of Rails responders to dry up your application (http://github.com/plataformatec/responders)
 gem 'responders', '~> 2.0'
 
+gem "nokogiri", ">= 1.10.3"
+
 group :rollbar, optional: true do
   gem 'rollbar'
 end

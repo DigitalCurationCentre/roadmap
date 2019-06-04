@@ -78,6 +78,8 @@ class User < ActiveRecord::Base
 
   belongs_to :org
 
+  has_many :regions, through: :org
+
   has_one  :pref
 
   has_many :answers
@@ -116,6 +118,8 @@ class User < ActiveRecord::Base
   # ==========
 
   default_scope { includes(:org, :perms) }
+
+  scope :active, -> { where(active: true) }
 
   # Retrieves all of the org_admins for the specified org
   scope :org_admins, -> (org_id) {
