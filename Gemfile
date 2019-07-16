@@ -78,6 +78,9 @@ gem 'omniauth-shibboleth'
 # ORCID OAuth 2.0 Strategy for OmniAuth 1.0 (https://github.com/datacite/omniauth-orcid)
 gem 'omniauth-orcid'
 
+# This gem provides a mitigation against CVE-2015-9284
+gem 'omniauth-rails_csrf_protection', '~> 0.1'
+
 # Pure Ruby implementation of Array#dig and Hash#dig for Ruby < 2.3. (https://github.com/Invoca/ruby_dig)
 gem 'ruby_dig'  # for omniauth-orcid
 
