@@ -76,9 +76,9 @@ class PlanExportsController < ApplicationController
     render pdf: file_name,
            margin: @formatting[:margin],
            footer: {
-             center: _("Created using the %{application_name}. Last modified %{date}") % {
+             center: _("Created using %{application_name}. Last modified %{date}") % {
                application_name: Rails.configuration.branding[:application][:name],
-               date: l(@plan.updated_at.to_date, formats: :short)
+               date: l(@plan.updated_at.to_date, format: :readable)
               },
              font_size: 8,
              spacing:   (Integer(@formatting[:margin][:bottom]) / 2) - 4,
@@ -88,7 +88,15 @@ class PlanExportsController < ApplicationController
   end
 
   def file_name
-    @plan.title.gsub(/ /, "_")
+    # Sanitize bad characters and replace spaces with underscores
+    ret = @plan.title
+    Zaru.sanitize! ret
+    ret = ret.strip.gsub(/\s+/, "_")
+    # limit the filename length to 100 chars. Windows systems have a MAX_PATH allowance
+    # of 255 characters, so this should provide enough of the title to allow the user
+    # to understand which DMP it is and still allow for the file to be saved to a deeply
+    # nested directory
+    ret[0, 100]
   end
 
   def publicly_authorized?

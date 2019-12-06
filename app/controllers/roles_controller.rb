@@ -38,7 +38,7 @@ class RolesController < ApplicationController
             message = _("Invitation to %{email} issued successfully.") % {
               email: params[:user]
             }
-            user = User.find_by(email: params[:user])
+            user = User.where_case_insensitive("email", params[:user]).first
           end
           message += _("Plan shared with %{email}.") % {
             email: user.email
@@ -77,7 +77,7 @@ class RolesController < ApplicationController
       # rubocop:disable LineLength
       render json: {
         code: 1,
-        msg: _("Successfully changed the permissions for #{@role.user.email}. They have been notified via email.")
+        msg: _("Successfully changed the permissions for %{email}. They have been notified via email.") % { email: @role.user.email }
       }
       # rubocop:enable LineLength
     else
