@@ -218,6 +218,15 @@ Rails.application.routes.draw do
         get 'user_plans'
       end
     end
+
+    resources :question_options, only: [:destroy], controller: "question_options"
+
+    resources :questions, only: [] do
+      get 'open_conditions'
+      resources :conditions, only: [:new, :show] do
+      end
+    end
+
     resources :plans, only: [:index] do
       member do
         get 'feedback_complete'
@@ -279,7 +288,11 @@ Rails.application.routes.draw do
         get :search
       end
     end
-    resources :notifications, except: [:show]
+    resources :notifications, except: [:show] do
+      member do
+        post 'enable', constraints: {format: [:json]}
+      end
+    end
   end
 
   get "research_projects/search", action: "search",

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190507091025) do
+ActiveRecord::Schema.define(version: 20200313153356) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,19 @@ ActiveRecord::Schema.define(version: 20190507091025) do
   end
 
   add_index "answers_question_options", ["answer_id"], name: "index_answers_question_options_on_answer_id", using: :btree
+
+  create_table "conditions", force: :cascade do |t|
+    t.integer  "question_id"
+    t.text     "option_list"
+    t.integer  "action_type"
+    t.integer  "number"
+    t.text     "remove_data"
+    t.text     "webhook_data"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "conditions", ["question_id"], name: "index_conditions_on_question_id", using: :btree
 
   create_table "departments", force: :cascade do |t|
     t.string   "name"
@@ -136,8 +149,9 @@ ActiveRecord::Schema.define(version: 20190507091025) do
     t.boolean  "dismissable"
     t.date     "starts_at"
     t.date     "expires_at"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.boolean  "enabled",           default: true
   end
 
   create_table "org_identifiers", force: :cascade do |t|
@@ -250,9 +264,11 @@ ActiveRecord::Schema.define(version: 20190507091025) do
     t.boolean  "is_default"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "versionable_id", limit: 36
   end
 
   add_index "question_options", ["question_id"], name: "index_question_options_on_question_id", using: :btree
+  add_index "question_options", ["versionable_id"], name: "index_question_options_on_versionable_id", using: :btree
 
   create_table "questions", force: :cascade do |t|
     t.text     "text"
@@ -445,6 +461,7 @@ ActiveRecord::Schema.define(version: 20190507091025) do
   add_foreign_key "answers", "users"
   add_foreign_key "answers_question_options", "answers"
   add_foreign_key "answers_question_options", "question_options"
+  add_foreign_key "conditions", "questions"
   add_foreign_key "guidance_groups", "orgs"
   add_foreign_key "guidances", "guidance_groups"
   add_foreign_key "notes", "answers"
