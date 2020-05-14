@@ -61,6 +61,8 @@ class Org < ActiveRecord::Base
 
   belongs_to :region
 
+  has_one :tracker
+
   has_many :guidance_groups, dependent: :destroy
 
   has_many :templates
