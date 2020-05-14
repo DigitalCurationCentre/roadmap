@@ -71,6 +71,8 @@ class Org < ApplicationRecord
   accepts_nested_attributes_for :tracker
   validates_associated :tracker
 
+  has_one :tracker
+
   has_many :guidance_groups, dependent: :destroy
 
   has_many :plans
