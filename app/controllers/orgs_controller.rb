@@ -108,9 +108,37 @@ class OrgsController < ApplicationController
 
   private
   def org_params
-    params.require(:org).permit(:name, :abbreviation, :logo, :contact_email,
-                                :contact_name, :remove_logo, :org_type,
-                                :feedback_enabled, :feedback_email_msg)
+    params.require(:org)
+          .permit(:name, :abbreviation, :logo, :contact_email, :contact_name,
+                  :remove_logo, :org_type, :managed, :feedback_enabled,
+                  :feedback_email_msg, :org_id, :org_name, :org_crosswalk,
+                  identifiers_attributes: [:identifier_scheme_id, :value],
+                  tracker_attributes: [:code])
+  end
+
+  def search_params
+    params.require(:org).permit(:name, :type)
+  end
+
+  # Destroy the identifier if it exists and was blanked out, replace the
+  # identifier if it was updated, create the identifier if its new, or
+  # ignore it
+  def process_identifier_change(org:, identifier:)
+    return org unless identifier.is_a?(Identifier)
+
+    if !identifier.new_record? && identifier.value.blank?
+      # Remove the identifier if it has been blanked out
+      identifier.destroy
+    elsif identifier.value.present?
+      # If the identifier already exists then remove it
+      current = org.identifier_for_scheme(scheme: identifier.identifier_scheme)
+      current.destroy if current.present? && current.value != identifier.value
+
+      identifier.identifiable = org
+      org.identifiers << identifier
+    end
+
+    org
   end
 
 end
