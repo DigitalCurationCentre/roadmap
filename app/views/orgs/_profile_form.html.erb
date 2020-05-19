@@ -140,15 +140,6 @@
 
   <hr>
 
-  <% if !org.new_record? %>
-    <%= render partial: "orgs/external_identifiers",
-               locals: {
-                 form: f,
-                 org: org,
-                 editable: current_user.can_super_admin?
-               } %>
-  <% end %>
-
   <div class="row">
     <div class="form-group col-xs-8">
       <%= f.button(_('Save'), id:"save_org_details_submit", class: "btn btn-primary", type: "submit") %>
