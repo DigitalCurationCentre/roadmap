@@ -123,7 +123,9 @@ module DMPRoadmap
     end
 
     # org abbreviation for the root google analytics tracker that gets planted on every page
-    config.tracker_root = "UoE"
+    # to use google analytics this needs to be  set to the org abbreviation of the org running
+    # the roadmap instance
+    # config.tracker_root = "XXX"
 
     # The default visibility setting for new plans
     #   organisationally_visible  - Any member of the user's org can view, export and duplicate the plan
