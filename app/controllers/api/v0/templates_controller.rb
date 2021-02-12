@@ -26,7 +26,7 @@ class Api::V0::TemplatesController < Api::V0::BaseController
                                    .where(org_id: @user.org_id, published: true)
                                    .where.not(customization_of: nil)
 
-    published_templates.order(:org_id, :version).each do |temp|
+    published_templates.each do |temp|
       if @org_templates[temp.org].present?
         if @org_templates[temp.org][:own][temp.family_id].nil?
           @org_templates[temp.org][:own][temp.family_id] = temp

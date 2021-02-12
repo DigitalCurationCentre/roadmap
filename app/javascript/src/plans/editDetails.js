@@ -46,16 +46,6 @@ $(() => {
 
   const grantNumberInfo = (grantId) => `Grant number: ${grantId}`;
 
-  const setInitialGrantProjectName = () => {
-    const grantId = grantIdHidden.val();
-    const researchProjects = window.researchProjects;
-    const researchProject = researchProjects.find((datum) => datum.grant_id === grantId);
-    if (researchProject) {
-      grantIdField.val(researchProject.description);
-    }
-  };
-
-  const setUpTypeahead = () => {
     if ($('.edit_plan').length) {
       // TODO: Convert this over so that it just loads in the controller?
       //       Follow this pattern:
